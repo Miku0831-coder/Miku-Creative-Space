@@ -34,14 +34,15 @@
       align-items: center;
     }
 
-    .gallery::before {
-      content: "Gallery coming soon...";
+   .gallery-placeholder {
       font-size: 1.2rem;
-      color: #999;
+      color: #39C5BB; /* Miku turquoise */
       text-align: center;
-      grid-column: 1 / -1;
+      opacity: 0.8;
+      margin: 40px 0;
+      font-style: italic;
     }
-
+    
     .miku-footer {
       background-color: #39C5BB; /* Miku turquoise */
       color: white;
@@ -60,7 +61,10 @@
   </header>
 
   <section class="gallery">
-    <!-- No images yet — this section will expand when you add them -->
+    <img src="images/Hatsune%20Miku%20ShadowBoxing%20Echoes.png" alt="Hatsune Miku ShadowBoxing Echoes">
+    <img src="images/Hatsune%20Miku%20Magical%20Mirai.png" alt="Hatsune Miku Magical Mirai">
+    <img src="images/Hatsune%20Miku%20Light%20my%20Path.png" alt="Hatsune Miku Light my Path">
+    <img src="images/Hatsune%20Miku%20Fairy%20Night.png" alt="Hatsune Miku Fairy Night">
   </section>
 
   <footer class="miku-footer">
