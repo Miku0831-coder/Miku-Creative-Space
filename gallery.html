@@ -177,6 +177,32 @@
       box-shadow: 0 0 25px rgba(57, 197, 187, 0.7);
     }
 
+    /* Lightbox arrows */
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      color: #39C5BB;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px;
+      transition: 0.3s ease;
+    }
+
+    .lightbox-arrow:hover {
+      color: #2ea89f;
+      text-shadow: 0 0 12px rgba(57, 197, 187, 0.8);
+    }
+
+    #arrow-left {
+      left: 30px;
+    }
+
+    #arrow-right {
+      right: 30px;
+    }
+
     /* Floating back-to-top button */
     #backToTop {
       position: fixed;
@@ -255,9 +281,11 @@
     </figure>
   </section>
 
-  <!-- Lightbox -->
+  <!-- Lightbox with arrows -->
   <div class="lightbox" id="lightbox">
+    <span class="lightbox-arrow" id="arrow-left">◀</span>
     <img id="lightbox-img" src="">
+    <span class="lightbox-arrow" id="arrow-right">▶</span>
   </div>
 
   <!-- Back to top button -->
@@ -287,16 +315,51 @@
       placeholder.style.display = "none";
     }
 
-    /* Lightbox click behavior */
-    document.querySelectorAll(".gallery img").forEach(img => {
+    /* Lightbox with navigation */
+    const galleryImages = Array.from(document.querySelectorAll(".gallery img"));
+    let currentIndex = 0;
+
+    galleryImages.forEach((img, index) => {
       img.addEventListener("click", () => {
+        currentIndex = index;
         lightbox.style.display = "flex";
-        lightboxImg.src = img.src;
+        lightboxImg.src = galleryImages[currentIndex].src;
       });
     });
 
-    lightbox.addEventListener("click", () => {
-      lightbox.style.display = "none";
+    /* Arrow navigation */
+    document.getElementById("arrow-left").addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      lightboxImg.src = galleryImages[currentIndex].src;
+    });
+
+    document.getElementById("arrow-right").addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      lightboxImg.src = galleryImages[currentIndex].src;
+    });
+
+    /* Keyboard navigation */
+    document.addEventListener("keydown", (e) => {
+      if (lightbox.style.display === "flex") {
+        if (e.key === "ArrowLeft") {
+          currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+          lightboxImg.src = galleryImages[currentIndex].src;
+        }
+        if (e.key === "ArrowRight") {
+          currentIndex = (currentIndex + 1) % galleryImages.length;
+          lightboxImg.src = galleryImages[currentIndex].src;
+        }
+        if (e.key === "Escape") {
+          lightbox.style.display = "none";
+        }
+      }
+    });
+
+    /* Close lightbox on click */
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+      }
     });
 
     /* Back-to-top button */
