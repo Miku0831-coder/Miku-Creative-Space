@@ -34,7 +34,7 @@
       align-items: center;
     }
 
-   .gallery-placeholder {
+    .gallery-placeholder {
       font-size: 1.2rem;
       color: #39C5BB; /* Miku turquoise */
       text-align: center;
@@ -42,7 +42,49 @@
       margin: 40px 0;
       font-style: italic;
     }
-    
+
+    /* Rounded corners + subtle shadows + Miku border */
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      border: 3px solid #39C5BB;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease,
+                  box-shadow 0.3s ease,
+                  filter 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* Soft hover glow + gentle zoom */
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(57, 197, 187, 0.5);
+      filter: brightness(1.05);
+    }
+
+    /* Lightbox background */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Lightbox image */
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      border: 4px solid #39C5BB;
+      box-shadow: 0 0 25px rgba(57, 197, 187, 0.7);
+    }
+
     .miku-footer {
       background-color: #39C5BB; /* Miku turquoise */
       color: white;
@@ -61,16 +103,39 @@
   </header>
 
   <section class="gallery">
+    <p class="gallery-placeholder">This space awaits Miku’s light…</p>
+
     <img src="images/Hatsune%20Miku%20ShadowBoxing%20Echoes.png" alt="Hatsune Miku ShadowBoxing Echoes">
     <img src="images/Hatsune%20Miku%20Magical%20Mirai.png" alt="Hatsune Miku Magical Mirai">
     <img src="images/Hatsune%20Miku%20Light%20my%20Path.png" alt="Hatsune Miku Light my Path">
     <img src="images/Hatsune%20Miku%20Fairy%20Night.png" alt="Hatsune Miku Fairy Night">
   </section>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="">
+  </div>
+
   <footer class="miku-footer">
     <p>Made with creativity, inspiration, and Miku’s light.<br>
     © Miku and Mikune | All Rights Reserved</p>
   </footer>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    document.querySelectorAll(".gallery img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+      });
+    });
+
+    lightbox.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+  </script>
 
 </body>
 </html>
