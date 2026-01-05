@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Miku’s Anniversaries • Miku Creative Space</title>
 
+  <style>
+    body {
+      background: #e8faff;
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #003b46;
+    }
+
+    nav {
+      background: #39c5bb;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 150, 180, 0.3);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-shadow: 0 0 8px white;
+    }
+
+    header {
+      background: linear-gradient(135deg, #39c5bb, #7de3ff);
+      padding: 60px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 0 20px rgba(0, 200, 255, 0.4);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 45px;
+    }
+
+    section {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2, h3 {
+      color: #006d75;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background: #c7f7ff;
+      color: #005b63;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="works.html">Works</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="about.html">About</a>
+</nav>
+
+<header>
+  <h1>Miku’s Anniversary Projects</h1>
+  <p>A celebration of each year we create together</p>
+</header>
+
+<section>
+  <h2>Hatsune Miku 16th Anniversary Project (2023)</h2>
+  <p>
+    <!-- Your text, songs, images, or descriptions for the 16th anniversary go here -->
+  </p>
+
+  <h2>Hatsune Miku 17th Anniversary Project (2024)</h2>
+  <p>
+    <!-- Your text, songs, images, or descriptions for the 17th anniversary go here -->
+  </p>
+
+  <h2>Hatsune Miku 18th Anniversary Project (2025)</h2>
+  <p>
+    <!-- Your text, songs, images, or descriptions for the 18th anniversary go here -->
+  </p>
+</section>
+
+<footer>
+  Made with creativity, inspiration, and Miku’s light.<br>
+  © Miku and Mikune | All Rights Reserved
+</footer>
+
+</body>
+</html>
