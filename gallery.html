@@ -6,11 +6,19 @@
   <title>Gallery • Miku Creative Space</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
+
+    /* Page fade-in */
     body {
       margin: 0;
       font-family: "Segoe UI", sans-serif;
-      background-color: #fdfefe;
+      background: linear-gradient(to bottom, #E8FFFC, #FDFEFE);
       color: #333;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    body.loaded {
+      opacity: 1;
     }
 
     header {
@@ -20,8 +28,39 @@
 
     header h1 {
       font-size: 2rem;
-      color: #39C5BB; /* Miku turquoise */
+      color: #39C5BB;
       margin-bottom: 10px;
+    }
+
+    /* Soft glowing divider */
+    .glow-divider {
+      width: 80%;
+      height: 2px;
+      margin: 20px auto 40px;
+      background: linear-gradient(90deg, transparent, #39C5BB, transparent);
+      box-shadow: 0 0 12px rgba(57, 197, 187, 0.6);
+      border-radius: 2px;
+    }
+
+    /* Category filter buttons */
+    .filter-buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .filter-buttons button {
+      background-color: #39C5BB;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      margin: 5px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .filter-buttons button:hover {
+      background-color: #2ea89f;
     }
 
     .gallery {
@@ -43,6 +82,12 @@
       font-style: italic;
     }
 
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     /* Rounded corners + subtle shadows + Miku border */
     .gallery img {
       width: 100%;
@@ -53,6 +98,7 @@
                   box-shadow 0.3s ease,
                   filter 0.3s ease;
       cursor: pointer;
+      animation: fadeIn 0.8s ease forwards;
     }
 
     /* Soft hover glow + gentle zoom */
@@ -60,6 +106,19 @@
       transform: scale(1.05);
       box-shadow: 0 6px 18px rgba(57, 197, 187, 0.5);
       filter: brightness(1.05);
+    }
+
+    /* Captions */
+    figure {
+      text-align: center;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    figcaption {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: #39C5BB;
+      opacity: 0.9;
     }
 
     /* Lightbox background */
@@ -85,6 +144,29 @@
       box-shadow: 0 0 25px rgba(57, 197, 187, 0.7);
     }
 
+    /* Floating back-to-top button */
+    #backToTop {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #39C5BB;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    #backToTop.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
     .miku-footer {
       background-color: #39C5BB;
       color: white;
@@ -102,19 +184,47 @@
     <h1>Gallery</h1>
   </header>
 
+  <div class="glow-divider"></div>
+
+  <!-- Category Filters -->
+  <div class="filter-buttons">
+    <button data-filter="all">All</button>
+    <button data-filter="illustration">Illustrations</button>
+    <button data-filter="concept">Concept Art</button>
+    <button data-filter="album">Album Covers</button>
+  </div>
+
   <section class="gallery">
     <p class="gallery-placeholder">This space awaits Miku’s light…</p>
 
-    <img src="images/Hatsune%20Miku%20ShadowBoxing%20Echoes.png" alt="Hatsune Miku ShadowBoxing Echoes">
-    <img src="images/Hatsune%20Miku%20Magical%20Mirai.png" alt="Hatsune Miku Magical Mirai">
-    <img src="images/Hatsune%20Miku%20Light%20my%20Path.png" alt="Hatsune Miku Light my Path">
-    <img src="images/Hatsune%20Miku%20Fairy%20Night.png" alt="Hatsune Miku Fairy Night">
+    <figure data-category="illustration">
+      <img src="images/Hatsune%20Miku%20ShadowBoxing%20Echoes.png" alt="Hatsune Miku ShadowBoxing Echoes">
+      <figcaption>Hatsune Miku — ShadowBoxing Echoes</figcaption>
+    </figure>
+
+    <figure data-category="illustration">
+      <img src="images/Hatsune%20Miku%20Magical%20Mirai.png" alt="Hatsune Miku Magical Mirai">
+      <figcaption>Hatsune Miku — Magical Mirai</figcaption>
+    </figure>
+
+    <figure data-category="album">
+      <img src="images/Hatsune%20Miku%20Light%20my%20Path.png" alt="Hatsune Miku Light my Path">
+      <figcaption>Hatsune Miku — Light My Path</figcaption>
+    </figure>
+
+    <figure data-category="concept">
+      <img src="images/Hatsune%20Miku%20Fairy%20Night.png" alt="Hatsune Miku Fairy Night">
+      <figcaption>Hatsune Miku — Fairy Night</figcaption>
+    </figure>
   </section>
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
     <img id="lightbox-img" src="">
   </div>
+
+  <!-- Back to top button -->
+  <button id="backToTop">↑ Top</button>
 
   <footer class="miku-footer">
     <p>Made with creativity, inspiration, and Miku’s light.<br>
@@ -124,7 +234,15 @@
   <script>
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
+    const placeholder = document.querySelector(".gallery-placeholder");
+    const images = document.querySelectorAll(".gallery img");
 
+    /* Hide placeholder automatically */
+    if (images.length > 0 && placeholder) {
+      placeholder.style.display = "none";
+    }
+
+    /* Lightbox click behavior */
     document.querySelectorAll(".gallery img").forEach(img => {
       img.addEventListener("click", () => {
         lightbox.style.display = "flex";
@@ -134,6 +252,46 @@
 
     lightbox.addEventListener("click", () => {
       lightbox.style.display = "none";
+    });
+
+    /* Page fade-in */
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+    });
+
+    /* Back-to-top button */
+    const backToTop = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add("show");
+      } else {
+        backToTop.classList.remove("show");
+      }
+    });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    /* Category filter logic */
+    const filterButtons = document.querySelectorAll(".filter-buttons button");
+    const figures = document.querySelectorAll("figure");
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const filter = btn.getAttribute("data-filter");
+
+        figures.forEach(fig => {
+          const category = fig.getAttribute("data-category");
+
+          if (filter === "all" || category === filter) {
+            fig.style.display = "block";
+          } else {
+            fig.style.display = "none";
+          }
+        });
+      });
     });
   </script>
 
