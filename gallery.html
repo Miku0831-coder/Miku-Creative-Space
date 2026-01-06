@@ -7,6 +7,30 @@
   <link rel="stylesheet" href="styles.css" />
   <style>
 
+    /* --- Navigation Menu (added) --- */
+    .main-menu {
+      background-color: #39C5BB;
+      padding: 12px 0;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(57, 197, 187, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+    }
+
+    .main-menu a {
+      color: white;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: opacity 0.3s ease;
+    }
+
+    .main-menu a:hover {
+      opacity: 0.75;
+    }
+
     /* Page fade-in */
     body {
       margin: 0;
@@ -238,6 +262,15 @@
 </head>
 
 <body>
+
+  <!-- Navigation Menu (added) -->
+  <nav class="main-menu">
+    <a href="index.html">Home</a>
+    <a href="works.html">Works</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="poems.html">Poems</a>
+    <a href="about.html">About</a>
+  </nav>
 
   <!-- Miku Loading Spinner -->
   <div id="loading-spinner">
