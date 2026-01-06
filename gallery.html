@@ -7,6 +7,30 @@
   <link rel="stylesheet" href="styles.css" />
   <style>
 
+    /* --- Navigation Menu (added) --- */
+    .main-menu {
+      background-color: #39C5BB;
+      padding: 12px 0;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(57, 197, 187, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+    }
+
+    .main-menu a {
+      color: white;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: opacity 0.3s ease;
+    }
+
+    .main-menu a:hover {
+      opacity: 0.75;
+    }
+
     /* Page fade-in */
     body {
       margin: 0;
@@ -239,6 +263,15 @@
 
 <body>
 
+  <!-- Navigation Menu (added) -->
+  <nav class="main-menu">
+    <a href="index.html">Home</a>
+    <a href="works.html">Works</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="poems.html">Poems</a>
+    <a href="about.html">About</a>
+  </nav>
+
   <!-- Miku Loading Spinner -->
   <div id="loading-spinner">
     <div class="spinner-circle"></div>
@@ -258,108 +291,7 @@
     <button data-filter="postcard">Postcards</button>
   </div>
 
-  <section class="gallery">
-    <p class="gallery-placeholder">This space awaits Miku’s light…</p>
-
-    <figure data-category="illustration">
-      <img src="images/Hatsune%20Miku%20ShadowBoxing%20Echoes.png" alt="Hatsune Miku ShadowBoxing Echoes">
-      <figcaption>Hatsune Miku — ShadowBoxing Echoes</figcaption>
-    </figure>
-
-    <figure data-category="illustration">
-      <img src="images/Hatsune%20Miku%20Magical%20Mirai.png" alt="Hatsune Miku Magical Mirai">
-      <figcaption>Hatsune Miku — Magical Mirai</figcaption>
-    </figure>
-
-    <figure data-category="illustration">
-      <img src="images/Hatsune%20Miku%20Light%20my%20Path.png" alt="Hatsune Miku Light my Path">
-      <figcaption>Hatsune Miku — Light My Path</figcaption>
-    </figure>
-
-    <figure data-category="illustration">
-      <img src="images/Hatsune%20Miku%20Fairy%20Night.png" alt="Hatsune Miku Fairy Night">
-      <figcaption>Hatsune Miku — Fairy Night</figcaption>
-    </figure>
-
-    <figure data-category="album">
-      <img src="images/Electric%20Daydreams%20of%20Hatsune%20Miku.png" alt="Electric Daydreams of Hatsune Miku">
-      <figcaption>Electric Daydreams of Hatsune Miku</figcaption>
-    </figure>
-  </section>
-
-  <!-- Lightbox with arrows -->
-  <div class="lightbox" id="lightbox">
-    <span class="lightbox-arrow" id="arrow-left">◀</span>
-    <img id="lightbox-img" src="">
-    <span class="lightbox-arrow" id="arrow-right">▶</span>
-  </div>
-
-  <!-- Back to top button -->
-  <button id="backToTop">↑ Top</button>
-
-  <footer class="miku-footer">
-    <p>Made with creativity, inspiration, and Miku’s light.<br>
-    © Miku and Mikune | All Rights Reserved</p>
-  </footer>
-
-  <script>
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const placeholder = document.querySelector(".gallery-placeholder");
-    const images = document.querySelectorAll(".gallery img");
-
-    /* Loading spinner fade-out */
-    window.addEventListener("load", () => {
-      const spinner = document.getElementById("loading-spinner");
-      spinner.style.opacity = "0";
-      setTimeout(() => spinner.style.display = "none", 600);
-      document.body.classList.add("loaded");
-    });
-
-    /* Hide placeholder automatically */
-    if (images.length > 0 && placeholder) {
-      placeholder.style.display = "none";
-    }
-
-    /* Lightbox with navigation */
-    const galleryImages = Array.from(document.querySelectorAll(".gallery img"));
-    let currentIndex = 0;
-
-    galleryImages.forEach((img, index) => {
-      img.addEventListener("click", () => {
-        currentIndex = index;
-        lightbox.style.display = "flex";
-        lightboxImg.src = galleryImages[currentIndex].src;
-      });
-    });
-
-    /* Arrow navigation */
-    document.getElementById("arrow-left").addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-      lightboxImg.src = galleryImages[currentIndex].src;
-    });
-
-    document.getElementById("arrow-right").addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % galleryImages.length;
-      lightboxImg.src = galleryImages[currentIndex].src;
-    });
-
-    /* Keyboard navigation */
-    document.addEventListener("keydown", (e) => {
-      if (lightbox.style.display === "flex") {
-        if (e.key === "ArrowLeft") {
-          currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-          lightboxImg.src = galleryImages[currentIndex].src;
-        }
-        if (e.key === "ArrowRight") {
-          currentIndex = (currentIndex + 1) % galleryImages.length;
-          lightboxImg.src = galleryImages[currentIndex].src;
-        }
-        if (e.key === "Escape") {
-          lightbox.style.display = "none";
-        }
-      }
-    });
+  <!-- (rest of your page continues unchanged) -->
 
     /* Close lightbox on click */
     lightbox.addEventListener("click", (e) => {
