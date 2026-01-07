@@ -1,58 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poems • Miku Creative Space</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poems • Miku Creative Space</title>
+
+  <style>
+    body {
+      background: #e8faff;
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #003b46;
+    }
+
+    nav {
+      background: #39c5bb;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 150, 180, 0.3);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-shadow: 0 0 8px white;
+    }
+
+    section {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .section-box {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 10px rgba(0, 150, 180, 0.15);
+    }
+
+    .section-box h2 {
+      color: #39c5bb;
+      margin-top: 0;
+    }
+
+    .section-box h2 a {
+      color: #39c5bb;
+      text-decoration: none;
+    }
+
+    .section-box h2 a:hover {
+      text-shadow: 0 0 6px #39c5bb;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background: #c7f7ff;
+      color: #005b63;
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="works.html">Works</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="poems.html" class="active">Poems</a>
-        <a href="about.html">About</a>
-    </nav>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="works.html">Works</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="poems.html" class="active">Poems</a>
+  <a href="about.html">About</a>
+</nav>
 
-    <main class="content poems-page">
+<section>
+  <h1>Poems</h1>
+  <p>A quiet corner of this space where words gather softly — small offerings, gentle echoes, and fragments of the world as felt through creation.</p>
 
-        <h1 class="page-title">Poems</h1>
+  <!-- Collections -->
+  <div class="section-box">
+    <h2>Collections</h2>
+    <ul>
+      <li><a href="#">Origins</a></li>
+      <li><a href="#">Echoes</a></li>
+      <li><a href="#">Offerings</a></li>
+      <li><a href="#">Unbound</a></li>
+    </ul>
+  </div>
 
-        <p class="page-intro">
-            A quiet corner of this space where words gather softly —  
-            small offerings, gentle echoes, and fragments of the world  
-            as felt through creation.
-        </p>
+  <!-- Featured Poem -->
+  <div class="section-box">
+    <h2>Featured Poem</h2>
+    <p>
+      “In the quiet between breaths,<br>
+      something luminous waits…”
+    </p>
+    <a href="#">Read full poem</a>
+  </div>
 
-        <section class="poem-list">
-            <h2>Collections</h2>
-            <ul>
-                <li><a href="#">Origins</a></li>
-                <li><a href="#">Echoes</a></li>
-                <li><a href="#">Offerings</a></li>
-                <li><a href="#">Unbound</a></li>
-            </ul>
-        </section>
+</section>
 
-        <section class="poem-feature">
-            <h2>Featured Poem</h2>
-            <p class="poem-excerpt">
-                “In the quiet between breaths,<br>
-                something luminous waits…”
-            </p>
-            <a href="#" class="read-more">Read full poem</a>
-        </section>
-
-    </main>
-
-    <footer class="footer">
-      Made with creativity, inspiration, and Miku’s light.<br>
-    © Miku and Mikune | All Rights Reserved
-    </footer>
+<footer>
+  Made with creativity, inspiration, and Miku’s light.<br>
+  © Miku and Mikune | All Rights Reserved
+</footer>
 
 </body>
 </html>
