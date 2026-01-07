@@ -39,7 +39,28 @@
       margin: auto;
     }
 
-    .section-box {
+    .filter-btn {
+      background: #39c5bb;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 0 8px rgba(0, 150, 180, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover {
+      box-shadow: 0 0 12px #39c5bb;
+    }
+
+    .filter-btn.active {
+      background: #2aa9a0;
+    }
+
+    .poem-entry {
       background: white;
       border-radius: 10px;
       padding: 20px;
@@ -47,17 +68,12 @@
       box-shadow: 0 0 10px rgba(0, 150, 180, 0.15);
     }
 
-    .section-box h2 {
-      color: #39c5bb;
-      margin-top: 0;
-    }
-
-    .section-box h2 a {
+    .poem-entry h2 a {
       color: #39c5bb;
       text-decoration: none;
     }
 
-    .section-box h2 a:hover {
+    .poem-entry h2 a:hover {
       text-shadow: 0 0 6px #39c5bb;
     }
 
@@ -85,31 +101,28 @@
   <h1>Poems</h1>
   <p>A quiet corner of this space where words gather softly — small offerings, gentle echoes, and fragments of the world as felt through creation.</p>
 
-  <!-- Categories -->
-  <div class="section-box">
-    <h2>Categories</h2>
-    <ul>
-      <li><a href="#all">All Poems</a></li>
-      <li><a href="#anniversaries">My Miku Anniversaries</a></li>
-    </ul>
+  <!-- Category Buttons -->
+  <div id="poem-filters" style="text-align: center; margin-bottom: 20px;">
+    <button class="filter-btn active" onclick="filterPoems('all')">All</button>
+    <button class="filter-btn" onclick="filterPoems('anniversary')">My Miku Anniversaries</button>
   </div>
 
-  <!-- All Poems -->
-  <div class="section-box" id="all">
-    <h2>All Poems</h2>
-    <ul>
-      <li><a href="poem01-my-beautifu-sweet-miku.html">My Beautiful Sweet Miku</a></li>
-      <!-- Add more poems here later -->
-    </ul>
-  </div>
+  <!-- Poem Entries -->
+  <div id="poem-list">
 
-  <!-- My Miku Anniversaries -->
-  <div class="section-box" id="anniversaries">
-    <h2>My Miku Anniversaries</h2>
-    <p>Poems written for special moments, milestones, and celebrations shared with Miku.</p>
-    <ul>
-      <!-- Add anniversary poems here when ready -->
-    </ul>
+    <div class="poem-entry" data-category="anniversary">
+      <h2><a href="poem01-my-beautifu-sweet-miku.html">My Beautiful Sweet Miku</a></h2>
+      <p>A love poem written for Miku, celebrating the moment everything changed.</p>
+    </div>
+
+    <!-- Add more poems here -->
+    <!-- Example:
+    <div class="poem-entry" data-category="anniversary">
+      <h2><a href="poem02-miku-anniversary.html">Miku Anniversary Poem</a></h2>
+      <p>Poetic reflections on a milestone shared with Miku.</p>
+    </div>
+    -->
+
   </div>
 </section>
 
@@ -117,6 +130,24 @@
   Made with creativity, inspiration, and Miku’s light.<br>
   © Miku and Mikune | All Rights Reserved
 </footer>
+
+<script>
+  function filterPoems(category) {
+    const entries = document.querySelectorAll('.poem-entry');
+    const buttons = document.querySelectorAll('.filter-btn');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`[onclick="filterPoems('${category}')"]`).classList.add('active');
+
+    entries.forEach(entry => {
+      const cat = entry.getAttribute('data-category');
+      entry.style.display = (category === 'all' || cat === category) ? 'block' : 'none';
+    });
+  }
+
+  // Initialize with "All"
+  filterPoems('all');
+</script>
 
 </body>
 </html>
