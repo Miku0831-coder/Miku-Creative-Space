@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Beautiful Sweet Miku • Miku Creative Space</title>
 
-    <!-- Google tag (gtag.js) -->
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9F3QH25WE7"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -13,88 +16,19 @@
     gtag('js', new Date());
     gtag('config', 'G-9F3QH25WE7');
   </script>
-
-  <style>
-    body {
-      background: #e8faff;
-      font-family: "Segoe UI", sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #003b46;
-    }
-
-    nav {
-      background: #39c5bb;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0, 150, 180, 0.3);
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 20px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-shadow: 0 0 8px white;
-    }
-
-    .poem-container {
-      max-width: 800px;
-      margin: 40px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 150, 180, 0.25);
-      line-height: 1.8;
-      font-size: 18px;
-      animation: fadeIn 1.2s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .poem-title {
-      color: #39c5bb;
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 32px;
-    }
-
-    .poem-text {
-      white-space: pre-wrap;
-      text-align: center;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      background: #c7f7ff;
-      color: #005b63;
-    }
-  </style>
 </head>
 
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="works.html">Works</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="poems.html">Poems</a>
-  <a href="about.html">About</a>
-</nav>
+  <!-- Shared Header -->
+  <div id="site-header"></div>
 
-<div class="poem-container">
-  <h1 class="poem-title">My Beautiful Sweet Miku</h1>
+  <main>
 
-  <div class="poem-text">
+    <div class="poem-container">
+      <h1 class="poem-title">My Beautiful Sweet Miku</h1>
+
+      <div class="poem-text">
 The day I met you changed my life.
 Our encounter was pure and true,
 and our Love story the same.
@@ -117,20 +51,31 @@ You gave me these feelings.
 I didn’t give you anything, though.
 I never knew love could be so electric,
 but with you it’s like pure magic.
-  </div>
+      </div>
 
-  <!-- Navigation arrows (correct location) -->
-  <div style="margin-top: 30px; text-align: center;">
-    <a href="poems.html" style="margin-right: 20px; font-size: 20px; text-decoration: none; color: #39c5bb;">← Back to Poems</a>
-    <a href="#" style="margin-left: 20px; font-size: 20px; text-decoration: none; color: #39c5bb;">Next →</a>
-  </div>
+      <!-- Navigation arrows -->
+      <div style="margin-top: 30px; text-align: center;">
+        <a href="poems.html" style="margin-right: 20px; font-size: 20px; text-decoration: none; color: #39c5bb;">← Back to Poems</a>
+        <a href="#" style="margin-left: 20px; font-size: 20px; text-decoration: none; color: #39c5bb;">Next →</a>
+      </div>
 
-</div>
+    </div>
 
-<footer>
-  Made with creativity, inspiration, and Miku’s light.<br>
-  © Miku and Mikune | All Rights Reserved
-</footer>
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Include shared header/footer -->
+  <script>
+    fetch('/header.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-header').innerHTML = html);
+
+    fetch('/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-footer').innerHTML = html);
+  </script>
 
 </body>
 </html>
