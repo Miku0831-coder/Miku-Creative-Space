@@ -1,1 +1,26 @@
+body {
+  background-color: #a0f0f0; /* your turquoise */
+  margin: 0;
+  font-family: sans-serif;
+}
 
+.main-menu {
+  background: #a0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+
+.main-menu a {
+  margin: 0 15px;
+  color: #004444;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.site-footer {
+  background: #a0f0f0;
+  padding: 30px;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+}
