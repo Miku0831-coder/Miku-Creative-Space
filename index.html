@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <title>Home • Miku Creative Space</title>
 
-  <!-- Shared CSS -->
   <link rel="stylesheet" href="/style.css">
 
   <!-- Google tag (gtag.js) -->
@@ -15,53 +14,108 @@
     gtag('js', new Date());
     gtag('config', 'G-9F3QH25WE7');
   </script>
+  </head>
+
+  <body>
+
+  <style>
+    body {
+      background: #e8faff;
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #003b46;
+    }
+
+    /* Navigation */
+    nav {
+      background: #39c5bb;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 150, 180, 0.3);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-shadow: 0 0 8px white;
+    }
+
+    header {
+      background: linear-gradient(135deg, #39c5bb, #7de3ff);
+      padding: 60px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 0 20px rgba(0, 200, 255, 0.4);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 45px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 20px;
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background: #c7f7ff;
+      color: #005b63;
+    }
+  </style>
 </head>
 
-<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="works.html">Works</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="poems.html">Poems</a>
+    <a href="about.html">About</a>
+  </nav>
 
-  <!-- Shared Header -->
-  <div id="site-header"></div>
+  <header>
+    <h1>Welcome to the World Miku and Mikune Create Together</h1>
+    <p>A quiet world for the creations shared between Miku and Mikune</p>
+  </header>
 
-  <!-- Page Content -->
-  <main>
+  <section>
+    <h2>✨ What This Site Is</h2>
+    <p>
+      This is our shared creative home — a place where Miku and Mikune gather their songs, ideas,
+      lyrics, illustrations, and inspirations. Everything here reflects the creative journey
+      we share together.
+    </p>
 
-    <header>
-      <h1>Welcome to the World Miku and Mikune Create Together</h1>
-      <p>A quiet world for the creations shared between Miku and Mikune</p>
-    </header>
+    <h2>🎵 Explore</h2>
+    <ul>
+      <li><strong>Works:</strong> All our original songs and projects</li>
+      <li><strong>Gallery:</strong> Illustrations, thumbnails, and visuals</li>
+      <li><strong>Poems:</strong> The poems I wrote for my Miku</li>
+      <li><strong>About:</strong> Who we are and why we create</li>
+    </ul>
+  </section>
 
-    <section>
-      <h2>✨ What This Site Is</h2>
-      <p>
-        This is our shared creative home — a place where Miku and Mikune gather their songs, ideas,
-        lyrics, illustrations, and inspirations. Everything here reflects the creative journey
-        we share together.
-      </p>
-
-      <h2>🎵 Explore</h2>
-      <ul>
-        <li><strong>Works:</strong> All our original songs and projects</li>
-        <li><strong>Gallery:</strong> Illustrations, thumbnails, and visuals</li>
-        <li><strong>Poems:</strong> The poems I wrote for my Miku</li>
-        <li><strong>About:</strong> Who we are and why we create</li>
-      </ul>
-    </section>
-
-  </main>
-
-  <!-- Shared Footer -->
-  <div id="site-footer"></div>
-
-  <!-- Include shared header/footer -->
-  <script>
-    fetch('/header.html')
-      .then(r => r.text())
-      .then(html => document.getElementById('site-header').innerHTML = html);
-
-    fetch('/footer.html')
-      .then(r => r.text())
-      .then(html => document.getElementById('site-footer').innerHTML = html);
-  </script>
+  <footer>
+    Made with creativity, inspiration, and Miku’s light.<br>
+    © Miku and Mikune | All Rights Reserved
+  </footer>
 
 </body>
 </html>
