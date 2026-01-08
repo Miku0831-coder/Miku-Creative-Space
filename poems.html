@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poems • Miku Creative Space</title>
 
-  <!-- Shared CSS -->
   <link rel="stylesheet" href="/style.css">
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9F3QH25WE7"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -20,78 +19,61 @@
 
 <body>
 
-  <!-- Shared Header -->
-  <div id="site-header"></div>
+<div id="site-header"></div>
 
-  <main>
+<!-- Sidebar -->
+<div class="sidebar">
+  <button class="sidebar-button active" onclick="filterPoems('all')">All Poems</button>
+  <button class="sidebar-button" onclick="filterPoems('anniversary')">My Miku Anniversaries</button>
+  <button class="sidebar-button" onclick="filterPoems('7project')">7 Poems Project</button>
+  <button class="sidebar-button" onclick="filterPoems('thankyou')">Thank You Poems</button>
+</div>
 
-    <section>
-      <h1>Poems</h1>
-      <p>A quiet corner of this space where words gather softly — small offerings, gentle echoes, and fragments of the world as felt through creation.</p>
+<main class="content-area">
 
-      <!-- Category Buttons -->
-      <div id="poem-filters" style="text-align: center; margin-bottom: 20px;">
-        <button class="filter-btn active" onclick="filterPoems('all')">All</button>
-        <button class="filter-btn" onclick="filterPoems('anniversary')">My Miku Anniversaries</button>
-        <button class="filter-btn" onclick="filterPoems('7project')">7 Poems Project</button>
-        <button class="filter-btn" onclick="filterPoems('thankyou')">Thank You Poems</button>
-      </div>
+  <h1>Poems</h1>
+  <div class="glow-divider"></div>
 
-      <!-- Poem Entries -->
-      <div id="poem-list">
+  <div class="content-grid" id="poem-list">
 
-        <!-- Anniversary Poems (placeholder) -->
-        <div class="poem-entry" data-category="anniversary">
-          <h2><a href="#">Example Poem Title</a></h2>
-          <p>A love poem written for Miku, celebrating the moment everything changed.</p>
-        </div>
+    <div class="content-card" data-category="7project">
+      <h2><a href="poem01-my-beautiful-sweet-miku.html">My Beautiful Sweet Miku</a></h2>
+      <p>A poem from the 7 Poems Project.</p>
+    </div>
 
-        <!-- 7 Poems Project -->
-        <div class="poem-entry" data-category="7project">
-          <h2><a href="poem01-my-beautiful-sweet-miku.html">My Beautiful Sweet Miku</a></h2>
-          <p>A poem from the 7 Poems Project.</p>
-        </div>
+    <div class="content-card" data-category="anniversary">
+      <h2><a href="#">Example Anniversary Poem</a></h2>
+      <p>A love poem celebrating Miku’s special day.</p>
+    </div>
 
-        <!-- Thank You Poems (placeholder) -->
-        <div class="poem-entry" data-category="thankyou">
-          <h2><a href="#">Thank You Poem</a></h2>
-          <p>A poem expressing gratitude and appreciation.</p>
-        </div>
+    <div class="content-card" data-category="thankyou">
+      <h2><a href="#">Thank You Poem</a></h2>
+      <p>A poem expressing gratitude and appreciation.</p>
+    </div>
 
-      </div>
-    </section>
+  </div>
 
-  </main>
+</main>
 
-  <!-- Shared Footer -->
-  <div id="site-footer"></div>
+<div id="site-footer"></div>
 
-  <!-- Include shared header/footer -->
-  <script>
-    fetch('/header.html')
-      .then(r => r.text())
-      .then(html => document.getElementById('site-header').innerHTML = html);
+<script>
+  fetch('/header.html').then(r=>r.text()).then(h=>document.getElementById('site-header').innerHTML=h);
+  fetch('/footer.html').then(r=>r.text()).then(h=>document.getElementById('site-footer').innerHTML=h);
 
-    fetch('/footer.html')
-      .then(r => r.text())
-      .then(html => document.getElementById('site-footer').innerHTML = html);
+  function filterPoems(category) {
+    const cards = document.querySelectorAll('.content-card');
+    const buttons = document.querySelectorAll('.sidebar-button');
 
-    function filterPoems(category) {
-      const entries = document.querySelectorAll('.poem-entry');
-      const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`[onclick="filterPoems('${category}')"]`).classList.add('active');
 
-      buttons.forEach(btn => btn.classList.remove('active'));
-      document.querySelector(`[onclick="filterPoems('${category}')"]`).classList.add('active');
-
-      entries.forEach(entry => {
-        const cat = entry.getAttribute('data-category');
-        entry.style.display = (category === 'all' || cat === category) ? 'block' : 'none';
-      });
-    }
-
-    // Initialize with "All"
-    filterPoems('all');
-  </script>
+    cards.forEach(card => {
+      const cat = card.getAttribute('data-category');
+      card.style.display = (category === 'all' || cat === category) ? 'block' : 'none';
+    });
+  }
+</script>
 
 </body>
 </html>
