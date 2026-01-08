@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poems • Miku Creative Space</title>
 
+  <!-- Shared CSS -->
   <link rel="stylesheet" href="/style.css">
 
-  <!-- Google tag -->
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9F3QH25WE7"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -19,61 +20,51 @@
 
 <body>
 
-<div id="site-header"></div>
+  <!-- Shared Header -->
+  <div id="site-header"></div>
 
-<!-- Sidebar -->
-<div class="sidebar">
-  <button class="sidebar-button active" onclick="filterPoems('all')">All Poems</button>
-  <button class="sidebar-button" onclick="filterPoems('anniversary')">My Miku Anniversaries</button>
-  <button class="sidebar-button" onclick="filterPoems('7project')">7 Poems Project</button>
-  <button class="sidebar-button" onclick="filterPoems('thankyou')">Thank You Poems</button>
-</div>
+  <main class="content-area">
 
-<main class="content-area">
+    <h1>Poems</h1>
+    <p>A quiet corner of this space where words gather softly — small offerings, gentle echoes, and fragments of the world as felt through creation.</p>
 
-  <h1>Poems</h1>
-  <div class="glow-divider"></div>
+    <div class="glow-divider"></div>
 
-  <div class="content-grid" id="poem-list">
+    <!-- Poem Grid -->
+    <div class="content-grid">
 
-    <div class="content-card" data-category="7project">
-      <h2><a href="poem01-my-beautiful-sweet-miku.html">My Beautiful Sweet Miku</a></h2>
-      <p>A poem from the 7 Poems Project.</p>
+      <div class="content-card">
+        <h2><a href="poem01-my-beautiful-sweet-miku.html">My Beautiful Sweet Miku</a></h2>
+        <p>A poem from the 7 Poems Project.</p>
+      </div>
+
+      <div class="content-card">
+        <h2><a href="#">Example Anniversary Poem</a></h2>
+        <p>A love poem celebrating Miku’s special day.</p>
+      </div>
+
+      <div class="content-card">
+        <h2><a href="#">Thank You Poem</a></h2>
+        <p>A poem expressing gratitude and appreciation.</p>
+      </div>
+
     </div>
 
-    <div class="content-card" data-category="anniversary">
-      <h2><a href="#">Example Anniversary Poem</a></h2>
-      <p>A love poem celebrating Miku’s special day.</p>
-    </div>
+  </main>
 
-    <div class="content-card" data-category="thankyou">
-      <h2><a href="#">Thank You Poem</a></h2>
-      <p>A poem expressing gratitude and appreciation.</p>
-    </div>
+  <!-- Shared Footer -->
+  <div id="site-footer"></div>
 
-  </div>
+  <!-- Include shared header/footer -->
+  <script>
+    fetch('/header.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-header').innerHTML = html);
 
-</main>
-
-<div id="site-footer"></div>
-
-<script>
-  fetch('/header.html').then(r=>r.text()).then(h=>document.getElementById('site-header').innerHTML=h);
-  fetch('/footer.html').then(r=>r.text()).then(h=>document.getElementById('site-footer').innerHTML=h);
-
-  function filterPoems(category) {
-    const cards = document.querySelectorAll('.content-card');
-    const buttons = document.querySelectorAll('.sidebar-button');
-
-    buttons.forEach(btn => btn.classList.remove('active'));
-    document.querySelector(`[onclick="filterPoems('${category}')"]`).classList.add('active');
-
-    cards.forEach(card => {
-      const cat = card.getAttribute('data-category');
-      card.style.display = (category === 'all' || cat === category) ? 'block' : 'none';
-    });
-  }
-</script>
+    fetch('/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-footer').innerHTML = html);
+  </script>
 
 </body>
 </html>
