@@ -6,6 +6,9 @@
   <title>Gallery • Miku Creative Space</title>
   <link rel="stylesheet" href="styles.css" />
 
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/style.css" />
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9F3QH25WE7"></script>
   <script>
@@ -14,6 +17,15 @@
     gtag('js', new Date());
     gtag('config', 'G-9F3QH25WE7');
   </script>
+</head>
+
+<body>
+
+  <!-- Shared Header -->
+  <div id="site-header"></div>
+
+  <!-- Page Content -->
+  <main
   
   <style>
 
@@ -346,11 +358,6 @@
   <!-- Back to top button -->
   <button id="backToTop">↑ Top</button>
 
-  <footer class="miku-footer">
-    <p>Made with creativity, inspiration, and Miku’s light.<br>
-    © Miku and Mikune | All Rights Reserved</p>
-  </footer>
-
   <script>
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
@@ -451,6 +458,23 @@
         });
       });
     });
+  </script>
+
+
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Include shared header/footer -->
+  <script>
+    fetch('/header.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-header').innerHTML = html);
+
+    fetch('/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-footer').innerHTML = html);
   </script>
 
 </body>
