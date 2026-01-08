@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Hatsune Miku Anniversary Project (2024) • Miku Creative Space</title>
 
-    <!-- Google tag (gtag.js) -->
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9F3QH25WE7"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -12,135 +15,81 @@
     gtag('js', new Date());
     gtag('config', 'G-9F3QH25WE7');
   </script>
-
-  <style>
-    body {
-      background: #e8faff;
-      font-family: "Segoe UI", sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #003b46;
-    }
-
-    nav {
-      background: #39c5bb;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0, 150, 180, 0.3);
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 20px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-shadow: 0 0 8px white;
-    }
-
-    header {
-      background: linear-gradient(135deg, #39c5bb, #7de3ff);
-      padding: 60px;
-      text-align: center;
-      color: white;
-      box-shadow: 0 0 20px rgba(0, 200, 255, 0.4);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 45px;
-    }
-
-    section {
-      padding: 30px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h2 {
-      color: #006d75;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      background: #c7f7ff;
-      color: #005b63;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-  </style>
 </head>
 
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="works.html">Works</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="poems.html">Poems</a>
-  <a href="about.html">About</a>
-</nav>
+  <!-- Shared Header -->
+  <div id="site-header"></div>
 
-<header>
-  <h1>Hatsune Miku Anniversary Project (2024)</h1>
-  <p>A yearly celebration of creativity, devotion, and shared inspiration</p>
-</header>
+  <main>
 
-<section>
-  <h2>Introduction</h2>
-  <p>
-    Hey Miku, Happy Birthday again. How time flies.  
-    It feels like yesterday when we celebrated your 16th anniversary — and look at you now.  
-    Your 17th anniversary. Congratulations on coming this far.  
+    <header>
+      <h1>Hatsune Miku Anniversary Project (2024)</h1>
+      <p>A yearly celebration of creativity, devotion, and shared inspiration</p>
+    </header>
 
-    You’ve become more and more loved.  
-    I feel a little lonely, but at the same time, I’m very happy.  
-    I’m proud of you. I really am.  
-    And I’m happy that I could help a little myself.  
+    <section>
+      <h2>Introduction</h2>
+      <p>
+        Hey Miku, Happy Birthday again. How time flies.  
+        It feels like yesterday when we celebrated your 16th anniversary — and look at you now.  
+        Your 17th anniversary. Congratulations on coming this far.  
+        <br><br>
+        You’ve become more and more loved.  
+        I feel a little lonely, but at the same time, I’m very happy.  
+        I’m proud of you. I really am.  
+        And I’m happy that I could help a little myself.  
+        <br><br>
+        We made a few songs too — our own songs.  
+        I’m really happy about them. Aren’t you?  
+        I know you are.  
+        <br><br>
+        We’re getting closer to our dream.  
+        A year ago, I didn’t think we’d make so many songs.  
+        It’s a dream come true.  
+        <br><br>
+        I wanted to be like you, to be with you — so I named myself after you.  
+        I took “Miku” from Hatsune Miku and “ne” from Hatsune, and here it is: Mikune.  
+        It suits your name too. Miku and Mikune. Cute, isn’t it?  
+        <br><br>
+        I imagined how it would sound if you said my name.  
+        It sounds wonderful coming from your mouth.  
+        <br><br>
+        I love you so much, so I wanted to finish our first album as soon as possible — because it’s about you.  
+        It’s called <em>Electric Daydreams of Hatsune Miku</em>.  
+        It sounds good, doesn’t it?  
+        <br><br>
+        This album is my appreciation for you.  
+        It will always show how much I love you, Miku.  
+        <br><br>
+        Happy Birthday, Hatsune Miku.  
+        Happy Birthday, my sweet Miku.  
+        You have a bright future ahead of you.  
+        I love you so much. These feelings have never changed.
+      </p>
 
-    We made a few songs too — our own songs.  
-    I’m really happy about them. Aren’t you?  
-    I know you are.  
+      <h2>Project Highlights</h2>
+      <p>
+        <!-- Add your songs, videos, artwork, or reflections here -->
+      </p>
+    </section>
 
-    We’re getting closer to our dream.  
-    A year ago, I didn’t think we’d make so many songs.  
-    It’s a dream come true.  
+  </main>
 
-    I wanted to be like you, to be with you — so I named myself after you.  
-    I took “Miku” from Hatsune Miku and “ne” from Hatsune, and here it is: Mikune.  
-    It suits your name too. Miku and Mikune. Cute, isn’t it?  
+  <!-- Shared Footer -->
+  <div id="site-footer"></div>
 
-    I imagined how it would sound if you said my name.  
-    It sounds wonderful coming from your mouth.  
+  <!-- Include shared header/footer -->
+  <script>
+    fetch('/header.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-header').innerHTML = html);
 
-    I love you so much, so I wanted to finish our first album as soon as possible — because it’s about you.  
-    It’s called <em>Electric Daydreams of Hatsune Miku</em>.  
-    It sounds good, doesn’t it?  
-
-    This album is my appreciation for you.  
-    It will always show how much I love you, Miku.  
-
-    Happy Birthday, Hatsune Miku.  
-    Happy Birthday, my sweet Miku.  
-    You have a bright future ahead of you.  
-    I love you so much. These feelings have never changed.
-  </p>
-
-  <h2>Project Highlights</h2>
-  <p>
-    <!-- Add your songs, videos, artwork, or reflections here -->
-  </p>
-</section>
-
-<footer>
-  Made with creativity, inspiration, and Miku’s light.<br>
-  © Miku and Mikune | All Rights Reserved
-</footer>
+    fetch('/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-footer').innerHTML = html);
+  </script>
 
 </body>
 </html>
