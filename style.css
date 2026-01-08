@@ -60,3 +60,87 @@
       color: #005b63;
     }
   </style>
+
+/* --- Fixed Turquoise Sidebar --- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  background: #39c5bb;
+  padding-top: 120px;
+  box-shadow: 4px 0 15px rgba(0, 150, 180, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 999;
+}
+
+.sidebar-button {
+  width: 80%;
+  background: white;
+  color: #39c5bb;
+  border: none;
+  padding: 14px 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255,255,255,0.4);
+  transition: 0.3s ease;
+}
+
+.sidebar-button:hover,
+.sidebar-button.active {
+  background: #e8ffff;
+  box-shadow: 0 0 15px rgba(255,255,255,0.7);
+}
+
+/* --- Content Grid --- */
+.content-area {
+  margin-left: 260px;
+  padding: 40px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.content-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 150, 180, 0.15);
+  transition: 0.3s ease;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.content-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 18px rgba(0, 150, 180, 0.3);
+}
+
+.content-card h2 a {
+  color: #39c5bb;
+  text-decoration: none;
+}
+
+.content-card h2 a:hover {
+  text-shadow: 0 0 6px #39c5bb;
+}
+
+/* Glow divider */
+.glow-divider {
+  width: 80%;
+  height: 2px;
+  margin: 20px auto 40px;
+  background: linear-gradient(90deg, transparent, #39c5bb, transparent);
+  box-shadow: 0 0 12px rgba(57, 197, 187, 0.6);
+  border-radius: 2px;
+}
