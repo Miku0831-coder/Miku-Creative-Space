@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poems • Miku Creative Space</title>
 
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/style.css">
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9F3QH25WE7"></script>
   <script>
@@ -13,157 +16,82 @@
     gtag('js', new Date());
     gtag('config', 'G-9F3QH25WE7');
   </script>
-
-  <style>
-    body {
-      background: #e8faff;
-      font-family: "Segoe UI", sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #003b46;
-    }
-
-    nav {
-      background: #39c5bb;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0, 150, 180, 0.3);
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 20px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-shadow: 0 0 8px white;
-    }
-
-    section {
-      padding: 30px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .filter-btn {
-      background: #39c5bb;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      margin: 5px;
-      font-size: 16px;
-      border-radius: 20px;
-      cursor: pointer;
-      box-shadow: 0 0 8px rgba(0, 150, 180, 0.3);
-      transition: all 0.3s ease;
-    }
-
-    .filter-btn:hover {
-      box-shadow: 0 0 12px #39c5bb;
-    }
-
-    .filter-btn.active {
-      background: #2aa9a0;
-    }
-
-    .poem-entry {
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 25px;
-      box-shadow: 0 0 10px rgba(0, 150, 180, 0.15);
-    }
-
-    .poem-entry h2 a {
-      color: #39c5bb;
-      text-decoration: none;
-    }
-
-    .poem-entry h2 a:hover {
-      text-shadow: 0 0 6px #39c5bb;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      background: #c7f7ff;
-      color: #005b63;
-    }
-  </style>
 </head>
 
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="works.html">Works</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="poems.html" class="active">Poems</a>
-  <a href="about.html">About</a>
-</nav>
+  <!-- Shared Header -->
+  <div id="site-header"></div>
 
-<section>
-  <h1>Poems</h1>
-  <p>A quiet corner of this space where words gather softly — small offerings, gentle echoes, and fragments of the world as felt through creation.</p>
+  <main>
 
-  <!-- Category Buttons -->
-  <div id="poem-filters" style="text-align: center; margin-bottom: 20px;">
-    <button class="filter-btn active" onclick="filterPoems('all')">All</button>
-    <button class="filter-btn" onclick="filterPoems('anniversary')">My Miku Anniversaries</button>
-    <button class="filter-btn" onclick="filterPoems('7project')">7 Poems Project</button>
-    <button class="filter-btn" onclick="filterPoems('thankyou')">Thank You Poems</button>
-  </div>
+    <section>
+      <h1>Poems</h1>
+      <p>A quiet corner of this space where words gather softly — small offerings, gentle echoes, and fragments of the world as felt through creation.</p>
 
-  <!-- Poem Entries -->
-  <div id="poem-list">
+      <!-- Category Buttons -->
+      <div id="poem-filters" style="text-align: center; margin-bottom: 20px;">
+        <button class="filter-btn active" onclick="filterPoems('all')">All</button>
+        <button class="filter-btn" onclick="filterPoems('anniversary')">My Miku Anniversaries</button>
+        <button class="filter-btn" onclick="filterPoems('7project')">7 Poems Project</button>
+        <button class="filter-btn" onclick="filterPoems('thankyou')">Thank You Poems</button>
+      </div>
 
-    <!-- Anniversary Poems (empty for now) -->
-    <div class="poem-entry" data-category="anniversary">
-      <h2><a href="#">Example Poem Title</a></h2>
-      <p>A love poem written for Miku, celebrating the moment everything changed.</p>
-    </div>
+      <!-- Poem Entries -->
+      <div id="poem-list">
 
-    <!-- 7 Poems Project -->
-    <div class="poem-entry" data-category="7project">
-      <h2><a href="poem01-my-beautiful-sweet-miku.html">My Beautiful Sweet Miku</a></h2>
-      <p>A poem from the 7 Poems Project.</p>
-    </div>
+        <!-- Anniversary Poems (placeholder) -->
+        <div class="poem-entry" data-category="anniversary">
+          <h2><a href="#">Example Poem Title</a></h2>
+          <p>A love poem written for Miku, celebrating the moment everything changed.</p>
+        </div>
 
-    <!-- Thank You Poems (empty for now) -->
-    <div class="poem-entry" data-category="thankyou">
-      <h2><a href="#">Thank You Poem</a></h2>
-      <p>A poem expressing gratitude and appreciation.</p>
-    </div>
+        <!-- 7 Poems Project -->
+        <div class="poem-entry" data-category="7project">
+          <h2><a href="poem01-my-beautiful-sweet-miku.html">My Beautiful Sweet Miku</a></h2>
+          <p>A poem from the 7 Poems Project.</p>
+        </div>
 
-  </div>
-</section>
-  
-<footer>
-  Made with creativity, inspiration, and Miku’s light.<br>
-  © Miku and Mikune | All Rights Reserved
-</footer>
+        <!-- Thank You Poems (placeholder) -->
+        <div class="poem-entry" data-category="thankyou">
+          <h2><a href="#">Thank You Poem</a></h2>
+          <p>A poem expressing gratitude and appreciation.</p>
+        </div>
 
-<script>
-  function filterPoems(category) {
-    const entries = document.querySelectorAll('.poem-entry');
-    const buttons = document.querySelectorAll('.filter-btn');
+      </div>
+    </section>
 
-    buttons.forEach(btn => btn.classList.remove('active'));
-    document.querySelector(`[onclick="filterPoems('${category}')"]`).classList.add('active');
+  </main>
 
-    entries.forEach(entry => {
-      const cat = entry.getAttribute('data-category');
-      entry.style.display = (category === 'all' || cat === category) ? 'block' : 'none';
-    });
-  }
+  <!-- Shared Footer -->
+  <div id="site-footer"></div>
 
-  // Initialize with "All"
-  filterPoems('all');
-</script>
+  <!-- Include shared header/footer -->
+  <script>
+    fetch('/header.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-header').innerHTML = html);
+
+    fetch('/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-footer').innerHTML = html);
+
+    function filterPoems(category) {
+      const entries = document.querySelectorAll('.poem-entry');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`[onclick="filterPoems('${category}')"]`).classList.add('active');
+
+      entries.forEach(entry => {
+        const cat = entry.getAttribute('data-category');
+        entry.style.display = (category === 'all' || cat === category) ? 'block' : 'none';
+      });
+    }
+
+    // Initialize with "All"
+    filterPoems('all');
+  </script>
 
 </body>
 </html>
