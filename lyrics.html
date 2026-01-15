@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miku Creative Space • Lyrics</title>
 
+    <!-- Shared CSS -->
+    <link rel="stylesheet" href="style.css">
+
+  
+</head><!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9F3QH25WE7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9F3QH25WE7');
+  </script>
+<body>
+
+    <!-- Shared Header -->
+    <div id="header"></div>
+
+    <main class="lyrics-container">
+        <h1 class="page-title">Lyrics</h1>
+
+        <!-- Example lyric block -->
+        <section class="lyric-block">
+            <h2 class="song-title">Song Title Here</h2>
+            <pre class="lyrics">
+Put your lyrics here...
+They will keep formatting because of <pre>.
+            </pre>
+        </section>
+
+        <!-- Add more lyric blocks as needed -->
+    </main>
+
+    <!-- Shared Footer -->
+    <div id="footer"></div>
+
+    <!-- Script to load header and footer -->
+    <script>
+        // Load header
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header").innerHTML = data;
+            });
+
+        // Load footer
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer").innerHTML = data;
+            });
+    </script>
+
+</body>
+</html>
