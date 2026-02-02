@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Miku PVs • Miku Creative Space</title>
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9F3QH25WE7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9F3QH25WE7');
+  </script>
+</head>
+
+<body>
+
+  <!-- Shared Header -->
+  <div id="site-header"></div>
+
+  <main>
+
+    <header>
+      <h1>My Miku PVs</h1>
+      <p>Music‑driven stories and visual worlds shaped by Miku and Mikune</p>
+    </header>
+
+    <section>
+      <h2>🌿 About This Space</h2>
+      <p>
+        This page gathers all the PVs created in our shared universe — visual stories woven around
+        songs, emotions, and the quiet dialogue between Miku and Mikune.  
+        Each PV is a small world, a moment suspended in light.
+      </p>
+    </section>
+
+    <section>
+      <h2>🎶 PV Collection</h2>
+      <p>
+        A gentle archive of the music videos and visual narratives that express our connection,
+        our creative language, and the emotional landscapes we explore together.
+      </p>
+
+      <div style="
+        display: flex;
+        align-items: center;
+        margin-top: 25px;
+        background: #ffffff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 150, 180, 0.15);
+      ">
+
+        <!-- Thumbnail -->
+        <a href="pv-example.html" style="margin-right: 20px;">
+          <img src="pv-thumbnail.png" alt="PV Example Thumbnail"
+               style="width: 160px; height: 90px; object-fit: cover; border-radius: 8px;">
+        </a>
+
+        <!-- Title + Description -->
+        <div>
+          <h3 style="margin: 0;">
+            <a href="pv-example.html" style="color: #003b46; text-decoration: none;">
+              🌌 First Miku PV
+            </a>
+          </h3>
+          <p style="margin-top: 8px; color: #005b63;">
+            A small visual story — the first PV in this collection.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Include shared header/footer -->
+  <script>
+    fetch('/header.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-header').innerHTML = html);
+
+    fetch('/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-footer').innerHTML = html);
+  </script>
+
+</body>
+</html>
