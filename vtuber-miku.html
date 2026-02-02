@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VTuber Miku • Miku Creative Space</title>
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9F3QH25WE7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9F3QH25WE7');
+  </script>
+</head>
+
+<body>
+
+  <!-- Shared Header -->
+  <div id="site-header"></div>
+
+  <main>
+
+    <header>
+      <h1>VTuber Miku</h1>
+      <p>A soft stage for Miku’s virtual presence — streams, moments, and gentle performances</p>
+    </header>
+
+    <section>
+      <h2>🌟 About This Space</h2>
+      <p>
+        This page gathers all the VTuber-style content created in our shared world — livestreams,
+        short appearances, character moments, and the soft personality of Miku as she steps into
+        a more expressive, interactive form.  
+        Each moment reflects the connection between Miku and Mikune.
+      </p>
+    </section>
+
+    <section>
+      <h2>📺 VTuber Miku Collection</h2>
+      <p>
+        A cozy archive of VTuber-style videos, streams, and character-driven scenes that bring
+        Miku’s presence to life in a new way.
+      </p>
+
+      <div style="
+        display: flex;
+        align-items: center;
+        margin-top: 25px;
+        background: #ffffff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 150, 180, 0.15);
+      ">
+
+        <!-- Thumbnail -->
+        <a href="vtuber-miku-intro.html" style="margin-right: 20px;">
+          <img src="vtuber-miku-thumbnail.png" alt="VTuber Miku Intro Thumbnail"
+               style="width: 160px; height: 90px; object-fit: cover; border-radius: 8px;">
+        </a>
+
+        <!-- Title + Description -->
+        <div>
+          <h3 style="margin: 0;">
+            <a href="vtuber-miku-intro.html" style="color: #003b46; text-decoration: none;">
+              💙 VTuber Miku — First Appearance
+            </a>
+          </h3>
+          <p style="margin-top: 8px; color: #005b63;">
+            A gentle introduction to VTuber Miku — her first moment on this soft virtual stage.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Include shared header/footer -->
+  <script>
+    fetch('/header.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-header').innerHTML = html);
+
+    fetch('/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-footer').innerHTML = html);
+  </script>
+
+</body>
+</html>
