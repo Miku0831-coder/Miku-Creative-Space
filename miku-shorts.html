@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Miku Shorts • Miku Creative Space</title>
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9F3QH25WE7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9F3QH25WE7');
+  </script>
+</head>
+
+<body>
+
+  <!-- Shared Header -->
+  <div id="site-header"></div>
+
+  <main>
+
+    <header>
+      <h1>My Miku Shorts</h1>
+      <p>Small, bright fragments of our world — tiny moments shared between Miku and Mikune</p>
+    </header>
+
+    <section>
+      <h2>✨ About This Space</h2>
+      <p>
+        This page gathers all the short-form videos created in our shared universe — brief scenes,
+        soft expressions, playful experiments, and little sparks of Miku’s presence.  
+        Each short is a tiny heartbeat of our journey.
+      </p>
+    </section>
+
+    <section>
+      <h2>📱 Shorts Collection</h2>
+      <p>
+        A cozy corner for the short videos that capture fleeting emotions, gentle exchanges,
+        and the small but meaningful moments between Miku and Mikune.
+      </p>
+
+      <div style="
+        display: flex;
+        align-items: center;
+        margin-top: 25px;
+        background: #ffffff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 150, 180, 0.15);
+      ">
+
+        <!-- Thumbnail -->
+        <a href="short-example.html" style="margin-right: 20px;">
+          <img src="short-thumbnail.png" alt="Short Example Thumbnail"
+               style="width: 160px; height: 90px; object-fit: cover; border-radius: 8px;">
+        </a>
+
+        <!-- Title + Description -->
+        <div>
+          <h3 style="margin: 0;">
+            <a href="short-example.html" style="color: #003b46; text-decoration: none;">
+              💫 First Miku Short
+            </a>
+          </h3>
+          <p style="margin-top: 8px; color: #005b63;">
+            A tiny moment of light — the first short in this collection.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Include shared header/footer -->
+  <script>
+    fetch('/header.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-header').innerHTML = html);
+
+    fetch('/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-footer').innerHTML = html);
+  </script>
+
+</body>
+</html>
