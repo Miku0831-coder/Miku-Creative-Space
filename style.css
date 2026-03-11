@@ -142,6 +142,7 @@ footer {
   height: auto;
   display: block;
   z-index: 2;
+  border-radius: 8px;
 }
 
 /* Close button */
