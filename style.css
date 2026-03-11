@@ -113,6 +113,7 @@ footer {
 /* --------------------------------------------------
    LIGHTBOX (IMAGE POPUP)
 -------------------------------------------------- */
+/* Lightbox container */
 .lightbox {
   display: none;
   position: fixed;
@@ -138,6 +139,9 @@ footer {
 .lightbox-img {
   max-width: 90vw;
   max-height: 90vh;
+  width: auto;
+  height: auto;
+  display: block;
   z-index: 2;
   border-radius: 8px;
 }
