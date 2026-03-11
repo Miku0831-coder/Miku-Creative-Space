@@ -1,3 +1,6 @@
+/* --------------------------------------------------
+   GLOBAL
+-------------------------------------------------- */
 body {
   background: #e8faff;
   font-family: "Segoe UI", sans-serif;
@@ -6,7 +9,9 @@ body {
   color: #003b46;
 }
 
-/* Navigation */
+/* --------------------------------------------------
+   NAVIGATION
+-------------------------------------------------- */
 nav {
   background: #39c5bb;
   padding: 15px;
@@ -26,6 +31,9 @@ nav a:hover {
   text-shadow: 0 0 8px white;
 }
 
+/* --------------------------------------------------
+   HEADER
+-------------------------------------------------- */
 header {
   background: linear-gradient(135deg, #39c5bb, #7de3ff);
   padding: 60px;
@@ -45,6 +53,9 @@ header p {
   opacity: 0.9;
 }
 
+/* --------------------------------------------------
+   MAIN CONTENT
+-------------------------------------------------- */
 section {
   padding: 30px;
   max-width: 900px;
@@ -59,7 +70,9 @@ footer {
   color: #005b63;
 }
 
-/* --- Fixed Turquoise Sidebar --- */
+/* --------------------------------------------------
+   SIDEBAR
+-------------------------------------------------- */
 .sidebar {
   position: fixed;
   top: 0;
@@ -97,6 +110,9 @@ footer {
   box-shadow: 0 0 15px rgba(255,255,255,0.7);
 }
 
+/* --------------------------------------------------
+   LIGHTBOX (IMAGE POPUP)
+-------------------------------------------------- */
 .lightbox {
   display: none;
   position: fixed;
@@ -111,14 +127,41 @@ footer {
   display: flex;
 }
 
-.lightbox img {
-  max-width: 90vw;
-  max-height: 90vh;
-  width: auto;
-  height: auto;
+/* Click-outside area */
+.lightbox-bg {
+  position: absolute;
+  inset: 0;
+  display: block;
 }
 
-/* --- Content Grid --- */
+/* Big image */
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 2;
+  border-radius: 8px;
+}
+
+/* Close button */
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  text-decoration: none;
+  z-index: 3;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  color: #39c5bb;
+}
+
+/* --------------------------------------------------
+   CONTENT GRID
+-------------------------------------------------- */
 .content-area {
   margin-left: 260px;
   padding: 40px;
@@ -154,7 +197,9 @@ footer {
   text-shadow: 0 0 6px #39c5bb;
 }
 
-/* Glow divider */
+/* --------------------------------------------------
+   DIVIDERS
+-------------------------------------------------- */
 .glow-divider {
   width: 80%;
   height: 2px;
@@ -164,7 +209,9 @@ footer {
   border-radius: 2px;
 }
 
-/* --- Privacy Policy Page Styling --- */
+/* --------------------------------------------------
+   PRIVACY POLICY PAGE
+-------------------------------------------------- */
 .content h1 {
   color: #39c5bb;
   text-align: center;
