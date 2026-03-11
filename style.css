@@ -1,65 +1,63 @@
- <style>
-    body {
-      background: #e8faff;
-      font-family: "Segoe UI", sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #003b46;
-    }
+body {
+  background: #e8faff;
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #003b46;
+}
 
-    /* Navigation */
-    nav {
-      background: #39c5bb;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 0 10px rgba(0, 150, 180, 0.3);
-    }
+/* Navigation */
+nav {
+  background: #39c5bb;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 150, 180, 0.3);
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 20px;
-      font-size: 18px;
-      font-weight: bold;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
 
-    nav a:hover {
-      text-shadow: 0 0 8px white;
-    }
+nav a:hover {
+  text-shadow: 0 0 8px white;
+}
 
-    header {
-      background: linear-gradient(135deg, #39c5bb, #7de3ff);
-      padding: 60px;
-      text-align: center;
-      color: white;
-      box-shadow: 0 0 20px rgba(0, 200, 255, 0.4);
-    }
+header {
+  background: linear-gradient(135deg, #39c5bb, #7de3ff);
+  padding: 60px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.4);
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 45px;
-    }
+header h1 {
+  margin: 0;
+  font-size: 45px;
+}
 
-    header p {
-      margin-top: 10px;
-      font-size: 20px;
-      opacity: 0.9;
-    }
+header p {
+  margin-top: 10px;
+  font-size: 20px;
+  opacity: 0.9;
+}
 
-    section {
-      padding: 30px;
-      max-width: 900px;
-      margin: auto;
-    }
+section {
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      background: #c7f7ff;
-      color: #005b63;
-    }
-  </style>
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  background: #c7f7ff;
+  color: #005b63;
+}
 
 /* --- Fixed Turquoise Sidebar --- */
 .sidebar {
@@ -146,7 +144,6 @@
 }
 
 /* --- Privacy Policy Page Styling --- */
-
 .content h1 {
   color: #39c5bb;
   text-align: center;
