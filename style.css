@@ -113,49 +113,50 @@ footer {
 /* --------------------------------------------------
    LIGHTBOX (IMAGE POPUP)
 -------------------------------------------------- */
-/* Lightbox container */
 .lightbox {
   display: none;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(57,197,187,0.9); /* turquoise */
-  padding: 10px; /* small border around image */
-  border-radius: 12px;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
   z-index: 9999;
 }
 
-/* Show when active */
 .lightbox:target {
+  display: flex;
+}
+
+/* Click-outside area */
+.lightbox-bg {
+  position: absolute;
+  inset: 0;
   display: block;
 }
 
 /* Big image */
 .lightbox-img {
-  max-width: 90vw;   /* allow it to grow large */
-  max-height: 90vh;  /* allow it to grow large */
-  display: block;
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 2;
   border-radius: 8px;
 }
 
 /* Close button */
 .lightbox-close {
   position: absolute;
-  top: -12px;
-  right: -12px;
-  background: white;
-  color: #39c5bb;
-  font-size: 26px;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
   text-decoration: none;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  z-index: 3;
   font-weight: bold;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+.lightbox-close:hover {
+  color: #39c5bb;
 }
 
 /* --------------------------------------------------
