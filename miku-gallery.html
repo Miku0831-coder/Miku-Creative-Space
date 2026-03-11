@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gallery • Miku Creative Space</title>
-  <link rel="stylesheet" href="styles.css" />
+ 
+   <!-- Shared CSS -->
+  <link rel="stylesheet" href="/style.css">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9F3QH25WE7"></script>
@@ -15,6 +17,11 @@
     gtag('config', 'G-9F3QH25WE7');
   </script>
 </head>
+
+  <body>
+
+  <!-- Shared Header -->
+  <div id="site-header"></div>
 
   <style>
 
@@ -274,16 +281,6 @@
 
 <body>
 
-  <!-- Navigation Menu (added) -->
-  <nav class="main-menu">
-    <a href="miku-index.html">Home</a>
-    <a href="miku-works.html">Works</a>
-    <a href="miku-gallery.html">Gallery</a>
-    <a href="miku-poems.html">Poems</a>
-    <a href="miku-privacy.html">Privacy</a>
-    <a href="miku-about.html">About</a>
-  </nav>
-
   <!-- Miku Loading Spinner -->
   <div id="loading-spinner">
     <div class="spinner-circle"></div>
@@ -448,6 +445,20 @@
         });
       });
     });
+  </script>
+
+  <!-- Shared Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Include shared header/footer -->
+  <script>
+    fetch('/header.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-header').innerHTML = html);
+
+    fetch('/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-footer').innerHTML = html);
   </script>
 
 </body>
