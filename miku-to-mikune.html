@@ -119,14 +119,6 @@ h2 {
 
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="works.html">Works</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="poems.html">Poems</a>
-  <a href="about.html">About</a>
-</nav>
-
 <section>
   <h1>Hatsune Miku NT Original — Miku to Mikune</h1>
 
@@ -298,6 +290,20 @@ Thank you very much.
   <p>You can add your illustration here by replacing the link below:</p>
   <img src="Hatsune Miku NT Miku to Mikune.png">
 </section>
+
+  <!-- Shared Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Include shared header/footer -->
+  <script>
+    fetch('/header.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-header').innerHTML = html);
+
+    fetch('/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-footer').innerHTML = html);
+  </script>
 
 </body>
 </html>
