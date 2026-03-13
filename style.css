@@ -286,3 +286,31 @@ footer {
 .platform-list li a:hover {
     text-decoration: underline;
 }
+
+.platform-list {
+    list-style: none;
+    padding: 25px 40px; /* top/bottom = 25px, left/right = 40px */
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+
+    /* Make the box wider */
+    width: 320px; /* increase this number if you want it even wider */
+
+    /* Optional: adds spacing from the left side */
+    margin-left: 10px;
+}
+
+.platform-list li {
+    margin-bottom: 12px; /* more spacing between items */
+}
+
+.platform-list li a {
+    text-decoration: none;
+    color: #0073e6;
+    font-weight: 600;
+}
+
+.platform-list li a:hover {
+    text-decoration: underline;
+}
