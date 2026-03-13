@@ -293,11 +293,7 @@ footer {
     background: white;
     border-radius: 10px;
     border: 1px solid #ddd;
-
-    /* Make the box wider */
-    width: 320px; /* increase this number if you want it even wider */
-
-    /* Optional: adds spacing from the left side */
+    width: 420px; 
     margin-left: 10px;
 }
 
