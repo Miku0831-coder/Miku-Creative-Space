@@ -251,3 +251,38 @@ footer {
 .content a:hover {
   text-decoration: underline;
 }
+
+.category {
+    margin-bottom: 30px;
+}
+
+.category h3 {
+    margin-bottom: 5px;
+}
+
+.category p {
+    margin-bottom: 10px;
+}
+
+.platform-list {
+    list-style: none;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    width: fit-content;
+}
+
+.platform-list li {
+    margin-bottom: 8px;
+}
+
+.platform-list li a {
+    text-decoration: none;
+    color: #0073e6;
+    font-weight: 600;
+}
+
+.platform-list li a:hover {
+    text-decoration: underline;
+}
