@@ -472,6 +472,75 @@
     });
   </script>
 
+  <script>
+// Track the active filter
+let currentFilter = "all";
+
+// Handle category filter buttons
+document.querySelectorAll(".filter-buttons button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    currentFilter = btn.dataset.filter;
+
+    document.querySelectorAll(".gallery figure").forEach(fig => {
+      if (currentFilter === "all" || fig.dataset.category === currentFilter) {
+        fig.style.display = "block";
+      } else {
+        fig.style.display = "none";
+      }
+    });
+  });
+});
+
+// Lightbox logic
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const figures = document.querySelectorAll(".gallery figure");
+
+let filteredFigures = [];
+let currentIndex = 0;
+
+// Open lightbox
+figures.forEach(fig => {
+  fig.addEventListener("click", () => {
+
+    // Build list of figures matching the current filter
+    filteredFigures = Array.from(figures).filter(f => {
+      return currentFilter === "all" || f.dataset.category === currentFilter;
+    });
+
+    // Set index inside filtered list
+    currentIndex = filteredFigures.indexOf(fig);
+
+    showImage();
+    lightbox.style.display = "flex";
+  });
+});
+
+// Display image in lightbox
+function showImage() {
+  const img = filteredFigures[currentIndex].querySelector("img");
+  lightboxImg.src = img.src;
+}
+
+// Arrow navigation
+document.getElementById("arrow-left").addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + filteredFigures.length) % filteredFigures.length;
+  showImage();
+});
+
+document.getElementById("arrow-right").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % filteredFigures.length;
+  showImage();
+});
+
+// Close lightbox when clicking outside image
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = "none";
+  }
+});
+</script>
+
   <!-- Shared Footer -->
   <div id="site-footer"></div>
 
