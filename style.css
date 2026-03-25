@@ -310,3 +310,20 @@ footer {
 .platform-list li a:hover {
     text-decoration: underline;
 }
+
+/* ============================
+   🎉 Hatsune Miku Birthday Theme
+   Only activates when JS adds .miku-birthday to <body>
+   ============================ */
+
+body.miku-birthday {
+    background-image: url("images/miku-birthday-bg.png"); /* optional */
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: mikuGlow 3s infinite alternate;
+}
+
+@keyframes mikuGlow {
+    from { filter: brightness(1); }
+    to { filter: brightness(1.25); }
+}
