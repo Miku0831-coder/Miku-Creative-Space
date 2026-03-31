@@ -362,13 +362,26 @@ footer {
 
 .video-grid {
   flex: 1;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .video-item {
-  display: block;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 150, 180, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.video-item img {
+  width: 160px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 /* ============================
