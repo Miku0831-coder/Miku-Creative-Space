@@ -360,6 +360,13 @@ footer {
   font-weight: bold;
 }
 
+/* Subcategory styling */
+.video-categories .subcategory {
+  margin-left: 15px;
+  font-size: 0.95em;
+  opacity: 0.85;
+}
+
 .video-grid {
   flex: 1;
   display: flex;
