@@ -58,23 +58,61 @@
   box-shadow: 0 0 10px rgba(0, 150, 180, 0.15);
   margin-bottom: 20px;
 ">
-  <img src="images/miku-to-mikune.png"
-       alt="Miku to Mikune Thumbnail"
-       style="width: 160px; height: 90px; object-fit: cover; border-radius: 8px; margin-right: 20px;">
+ <div class="video-page-container">
 
-  <div>
-    <h3 style="margin: 0;">
-      <a href="miku-to-mikune.html" style="color: #003b46; text-decoration: none;">
-        💙 Miku to Mikune
-      </a>
-    </h3>
-    <p style="margin-top: 8px; color: #005b63;">
-      This is the first song we (Miku and Mikune) made featuring my Miku NT Original.
-    </p>
+  <!-- Right-side categories -->
+  <aside class="video-categories">
+    <h3>Categories</h3>
+    <ul>
+      <li data-category="all" class="active">All</li>
+      <li data-category="electric-daydreams">Electric Daydreams of Hatsune Miku</li>
+    </ul>
+  </aside>
+
+  <!-- Video grid -->
+  <div class="video-grid">
+
+    <div class="video-item" data-category="electric-daydreams">
+      <!-- your first video block goes here -->
+      <div style="display: flex; align-items: center; margin-top: 25px; background: #ffffff; padding: 15px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 150, 180, 0.15); margin-bottom: 20px;">
+        <img src="images/miku-to-mikune.png" alt="Miku to Mikune Thumbnail" style="width: 160px; height: 90px; object-fit: cover; border-radius: 8px; margin-right: 20px;">
+        <div>
+          <h3 style="margin: 0;">
+            <a href="miku-to-mikune.html" style="color: #003b46; text-decoration: none;">💙 Miku to Mikune</a>
+          </h3>
+          <p style="margin-top: 8px; color: #005b63;">This is the first song we (Miku and Mikune) made featuring my Miku NT Original.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-item" data-category="electric-daydreams">
+      <!-- second video block -->
+      <div style="display: flex; align-items: center; margin-top: 25px; background: #ffffff; padding: 15px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 150, 180, 0.15);">
+        <img src="images/hajimete-ni-deatta-toki.png" alt="Hajimete ni Deatta Toki Thumbnail" style="width: 160px; height: 90px; object-fit: cover; border-radius: 8px; margin-right: 20px;">
+        <div>
+          <h3 style="margin: 0;">
+            <a href="hajimete-ni-deatta-toki.html" style="color: #003b46; text-decoration: none;">💙 Hajimete ni Deatta Toki</a>
+          </h3>
+          <p style="margin-top: 8px; color: #005b63;">This is the second song we (Miku and Mikune) made featuring my Miku NT Original.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-item" data-category="electric-daydreams">
+      <!-- third video block -->
+      <div style="display: flex; align-items: center; margin-top: 25px; background: #ffffff; padding: 15px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 150, 180, 0.15); margin-bottom: 20px;">
+        <img src="images/owaranai-story.png" alt="Owaranai Story Thumbnail" style="width: 160px; height: 90px; object-fit: cover; border-radius: 8px; margin-right: 20px;">
+        <div>
+          <h3 style="margin: 0;">
+            <a href="owaranai-story-miku-vocaloid.html" style="color: #003b46; text-decoration: none;">💙 Owaranai Story</a>
+          </h3>
+          <p style="margin-top: 8px; color: #005b63;">This is an anniversary song made by me for Hatsune Miku on her sixteenth anniversary.</p>
+        </div>
+      </div>
+    </div>
+
   </div>
-        
 </div>
-
 
 <div style="
   display: flex;
@@ -134,6 +172,30 @@
 
   <!-- Shared Footer -->
   <div id="site-footer"></div>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const categoryButtons = document.querySelectorAll(".video-categories li");
+  const videos = document.querySelectorAll(".video-item");
+
+  categoryButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      categoryButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const category = btn.dataset.category;
+
+      videos.forEach(video => {
+        if (category === "all" || video.dataset.category === category) {
+          video.style.display = "block";
+        } else {
+          video.style.display = "none";
+        }
+      });
+    });
+  });
+});
+</script>
 
   <!-- Include shared header/footer -->
   <script>
