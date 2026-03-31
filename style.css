@@ -311,6 +311,66 @@ footer {
     text-decoration: underline;
 }
 
+/* --------------------------------------------------
+   VIDEO CATEGORY FILTER
+-------------------------------------------------- */
+
+.video-page-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.video-categories {
+  width: 200px;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 150, 180, 0.15);
+  height: fit-content;
+}
+
+.video-categories h3 {
+  margin-top: 0;
+  color: #39c5bb;
+}
+
+.video-categories ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.video-categories li {
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+  color: #003b46;
+  font-weight: 600;
+}
+
+.video-categories li:hover {
+  background: #e8faff;
+}
+
+.video-categories li.active {
+  background: #c7f7ff;
+  font-weight: bold;
+}
+
+.video-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.video-item {
+  display: block;
+}
+
 /* ============================
    🎉 Hatsune Miku Birthday Theme
    Only activates when JS adds .miku-birthday to <body>
