@@ -114,7 +114,7 @@
   <!-- Shared Footer -->
   <div id="site-footer"></div>
 
-  <script>
+ <script>
 document.addEventListener("DOMContentLoaded", () => {
   const categoryButtons = document.querySelectorAll(".video-categories li");
   const videos = document.querySelectorAll(".video-item");
@@ -127,8 +127,21 @@ document.addEventListener("DOMContentLoaded", () => {
       const category = btn.dataset.category;
 
       videos.forEach(video => {
-        if (category === "all" || video.dataset.category === category) {
-          video.style.display = "block";
+        const videoCat = video.dataset.category;
+
+        // Show ALL videos under My Miku Albums
+        if (category === "my-miku-albums") {
+          if (videoCat.startsWith("electric-daydreams-of-hatsune-miku")) {
+            video.style.display = "flex";
+          } else {
+            video.style.display = "none";
+          }
+          return;
+        }
+
+        // Normal filtering
+        if (category === "all" || videoCat === category) {
+          video.style.display = "flex";
         } else {
           video.style.display = "none";
         }
