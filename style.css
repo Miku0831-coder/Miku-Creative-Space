@@ -407,3 +407,25 @@ body.miku-birthday {
     from { filter: brightness(1); }
     to { filter: brightness(1.25); }
 }
+
+/* --------------------------------------------------
+   FEATURED TRACK HIGHLIGHT
+-------------------------------------------------- */
+
+.highlight-track {
+  background: #d8f5d0; /* soft green */
+  padding: 12px 16px;
+  border-left: 4px solid #7acb6a;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.highlight-track a {
+  color: #2a6f2f;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.highlight-track a:hover {
+  text-decoration: underline;
+}
