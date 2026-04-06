@@ -409,21 +409,24 @@ body.miku-birthday {
 }
 
 /* --------------------------------------------------
-   FEATURED TRACK HIGHLIGHT
+   FEATURED TRACK — GREEN COLUMN
 -------------------------------------------------- */
 
 .highlight-track {
-  background: #d8f5d0; /* soft green */
-  padding: 12px 16px;
-  border-left: 4px solid #7acb6a;
-  border-radius: 8px;
-  margin-bottom: 10px;
+  background: #3cb371; /* medium soft green */
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  color: white; /* makes the text white */
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
 
+/* Make the link white too */
 .highlight-track a {
-  color: #2a6f2f;
-  font-weight: bold;
+  color: white;
   text-decoration: none;
+  font-weight: 700;
 }
 
 .highlight-track a:hover {
