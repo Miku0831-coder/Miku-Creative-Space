@@ -409,15 +409,15 @@ body.miku-birthday {
 }
 
 /* --------------------------------------------------
-   FEATURED TRACK — GREEN COLUMN
+   FEATURED TRACK — MATCHED GREEN COLUMN
 -------------------------------------------------- */
 
 .highlight-track {
-  background: #3cb371; /* medium soft green */
+  background: #4CAF50; /* matched green */
   padding: 14px 18px;
   border-radius: 10px;
   margin-bottom: 12px;
-  color: white; /* makes the text white */
+  color: white; /* white text */
   font-weight: 600;
   box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
