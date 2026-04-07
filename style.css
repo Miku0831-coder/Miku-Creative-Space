@@ -437,3 +437,10 @@ body.miku-birthday {
   display: flex;
   flex-direction: column;
 }
+
+.audius-embed {
+  width: 100%;
+  max-width: 650px; /* adjust if you want it bigger or smaller */
+  border: none;
+  margin-left: 0;
+}
