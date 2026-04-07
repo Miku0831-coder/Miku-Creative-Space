@@ -432,21 +432,3 @@ body.miku-birthday {
 .highlight-track a:hover {
   text-decoration: underline;
 }
-
-.links {
-  display: flex;
-  flex-direction: column;
-}
-
-.audius-embed {
-  width: 100%;
-  max-width: 650px; /* or 700px if you want it bigger */
-  border: none;
-  margin-left: 0;
-  padding-left: 0;
-  display: block;
-}
-
-.links {
-  padding-left: 0 !important;
-}
