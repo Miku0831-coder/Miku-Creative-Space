@@ -432,3 +432,8 @@ body.miku-birthday {
 .highlight-track a:hover {
   text-decoration: underline;
 }
+
+.links {
+  display: flex;
+  flex-direction: column;
+}
