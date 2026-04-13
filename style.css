@@ -521,3 +521,8 @@ h2 {
     color: #003b46;
 }
   </style>
+
+.links {
+  display: block !important;
+  flex-direction: column !important;
+}
