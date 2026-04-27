@@ -432,3 +432,62 @@ body.miku-birthday {
 .highlight-track a:hover {
   text-decoration: underline;
 }
+
+/* --------------------------------------------------
+   SONG PAGE — LYRICS BOX & LOCAL ELEMENTS
+-------------------------------------------------- */
+
+/* Song page h2 (kept separate so it doesn't override global h2) */
+.song-page h2 {
+  color: #008c9e;
+  border-left: 5px solid #39c5bb;
+  padding-left: 10px;
+  margin-top: 40px;
+  margin-bottom: 5px; /* fixes spacing */
+}
+
+/* Links inside .links container */
+.song-page .links a {
+  display: inline-block;
+  margin: 8px;
+  padding: 10px 15px;
+  background: #39c5bb;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 0 8px rgba(0, 150, 180, 0.2);
+}
+
+.song-page .links a:hover {
+  background: #2ea89f;
+}
+
+/* Song page images */
+.song-page img {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 150, 180, 0.3);
+  margin-top: 20px;
+}
+
+/* Lyrics box */
+.lyrics {
+  background: #ffffff;
+  border-left: 4px solid #39c5bb;
+  margin: 40px auto;
+  padding: 20px 25px;
+  max-width: 800px;
+  line-height: 1.8;
+  font-size: 18px;
+  color: #003b46;
+  box-shadow: 0 0 10px rgba(0, 150, 180, 0.15);
+  border-radius: 8px;
+  white-space: pre-wrap;
+}
+
+/* Lyrics title */
+.lyrics h2 {
+  margin-top: 0;
+  color: #39c5bb;
+  font-weight: 600;
+}
