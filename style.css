@@ -559,3 +559,16 @@ body.miku-birthday {
   box-shadow: 0 0 10px rgba(0, 150, 180, 0.3);
   margin-top: 20px;
 }
+
+/* Remove green border-left from Illustration title */
+.video-page h2.illustration-title {
+  border-left: none;
+}
+
+/* Larger illustrations on all pages */
+.video-page img,
+.song-page img,
+.short-page img {
+  width: 100%;
+  max-width: 600px;
+}
