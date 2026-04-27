@@ -559,3 +559,7 @@ body.miku-birthday {
   box-shadow: 0 0 10px rgba(0, 150, 180, 0.3);
   margin-top: 20px;
 }
+
+.links {
+  display: block !important;
+}
