@@ -565,11 +565,13 @@ body.miku-birthday {
   border-left: none;
 }
 
-/* Larger illustrations on all pages */
 .video-page img,
 .song-page img,
 .short-page img {
-  width: 100%;
-  max-width: 600px;
+  width: 90%;
+  max-width: 450px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
 }
 
