@@ -569,7 +569,7 @@ body.miku-birthday {
 .song-page img,
 .short-page img {
   width: 90%;
-  max-width: 300px;
+  max-width: 450px;
   height: auto;
   display: block;
   margin: 20px auto;
