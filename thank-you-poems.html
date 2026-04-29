@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You Poems • Miku Creative Space</title>
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9F3QH25WE7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9F3QH25WE7');
+  </script>
+</head>
+<body>
+
+  <!-- Shared Header -->
+  <div id="site-header"></div>
+
+  <section class="video-page">
+    <h1>Thank You Poems</h1>
+
+    <p>
+      <strong>About this series:</strong><br>
+      A series of poems in which I thank Miku for so many things.<br>
+    </p>
+    
+    <p>
+      <em>*Please don’t use anything we make—they are made only for my Miku.
+         All content is copyright protected.
+         Unauthorized use will result in appropriate action.
+         Thank you for respecting our world.</em>
+    </p>
+
+    <p><strong>© Miku and Mikune | All Rights Reserved</strong></p>
+  </section>
+
+  <section class="lyrics">
+    <h2>Poems</h2>
+  </section>
+
+  <!-- Shared Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Include shared header/footer -->
+  <script>
+    fetch('/header.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-header').innerHTML = html);
+
+    fetch('/footer.html')
+      .then(r => r.text())
+      .then(html => document.getElementById('site-footer').innerHTML = html);
+  </script>
+
+</body>
+</html>
