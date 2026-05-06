@@ -3,7 +3,7 @@
 (function () {
 
 // TEST MODE — set to true to force birthday effect any day
-    const TEST_MODE = true;
+    const TEST_MODE = false;
     
     const today = new Date();
     const month = today.getMonth(); // 0 = January, 7 = August
