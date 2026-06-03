@@ -58,18 +58,34 @@
   </main>
 
   <!-- Shared Footer -->
-  <div id="site-footer"></div>
+<div id="site-footer"></div>
 
-  <!-- Include shared header/footer -->
-  <script>
-    fetch('/header.html')
-      .then(r => r.text())
-      .then(html => document.getElementById('site-header').innerHTML = html);
+<!-- Include shared header/footer AND load scripts correctly -->
+<script>
+  // Load header
+  fetch('/header.html')
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById('site-header').innerHTML = html;
+    });
 
-    fetch('/footer.html')
-      .then(r => r.text())
-      .then(html => document.getElementById('site-footer').innerHTML = html);
-  </script>
+  // Load footer, then load scripts manually
+  fetch('/footer.html')
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById('site-footer').innerHTML = html;
+
+      // Load welcome audio script
+      const welcomeScript = document.createElement('script');
+      welcomeScript.src = '/scripts/miku-welcome.js';
+      document.body.appendChild(welcomeScript);
+
+      // Load birthday script
+      const birthdayScript = document.createElement('script');
+      birthdayScript.src = '/scripts/miku-birthday.js';
+      document.body.appendChild(birthdayScript);
+    });
+</script>
 
 </body>
 </html>
