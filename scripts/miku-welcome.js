@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const audio = new Audio("/audio/miku-welcome.mp3");
+    const audio = new Audio("/audio/miku-mikune.mp3");
     audio.volume = 0.7; // gentle volume
     audio.play().catch(() => {
         // If autoplay is blocked, wait for first click/tap
