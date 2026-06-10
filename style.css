@@ -597,10 +597,13 @@ body.miku-birthday {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;              /* puts items next to each other */
+    gap: 12px;                  /* space between links */
+    flex-wrap: wrap;            /* allows wrapping on small screens */
 }
 
 .footer-links li {
-    margin: 4px 0;
+    margin: 0;                  /* remove vertical spacing */
 }
 
 .footer-links a {
