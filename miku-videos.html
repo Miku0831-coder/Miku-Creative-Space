@@ -54,73 +54,88 @@
   box-shadow: 0 0 10px rgba(0, 150, 180, 0.15);
   margin-bottom: 20px;
 ">
- <div class="video-page-container">
+
+<div class="video-page-container">
 
   <!-- Right-side categories -->
   <aside class="video-categories">
     <h3>Categories</h3>
-  <ul>
-  <li data-category="all" class="active">All</li>
+    <ul>
 
-  <!-- Main category -->
-  <li data-category="my-miku-albums" id="main-album-category">
-    My Miku Albums
-  </li>
+      <li data-category="all" class="active">All</li>
 
-  <!-- Subcategories container -->
-  <div id="album-subcategories" style="display: none;">
-    <li data-category="electric-daydreams-of-hatsune-miku" class="subcategory">
-      Electric Daydreams of Hatsune Miku
-    </li>
+      <!-- Main category -->
+      <li data-category="my-miku-albums" id="main-album-category">
+        My Miku Albums
+      </li>
 
-    <li data-category="my-miku-renditions" class="subcategory">
-      My Miku Renditions
-    </li>
-  </div>
-</ul>
+    </ul>
+
+    <!-- Subcategories container (MOVED OUTSIDE <ul>) -->
+    <div id="album-subcategories" style="display: none;">
+      <li data-category="electric-daydreams-of-hatsune-miku" class="subcategory">
+        Electric Daydreams of Hatsune Miku
+      </li>
+
+      <li data-category="my-miku-renditions" class="subcategory">
+        My Miku Renditions
+      </li>
+    </div>
+  </ul>
 
   </aside>
 
   <!-- Video grid -->
   <div class="video-grid">
 
-    <div class="video-item" data-category="electric-daydreams-of-hatsune-miku">
-  <img src="images/miku-to-mikune.png" alt="Miku to Mikune Thumbnail">
+    <!-- Video 1 -->
+    <div class="video-card">
+      <div class="video-item" data-category="electric-daydreams-of-hatsune-miku">
+        <img src="images/miku-to-mikune.png" alt="Miku to Mikune Thumbnail">
+        <div>
+          <h3><a href="miku-to-mikune-miku-nt-original-video.html">💙 Miku to Mikune — Miku NT Original</a></h3>
+          <p>This is the first song we (Miku and Mikune) made featuring my Miku NT Original.</p>
+        </div>
+      </div>
+    </div>
 
-  <div>
-    <h3><a href="miku-to-mikune-miku-nt-original-video.html">💙 Miku to Mikune — Miku NT Original</a></h3>
-    <p>This is the first song we (Miku and Mikune) made featuring my Miku NT Original.</p>
-  </div>
-</div>
+    <!-- Video 2 -->
+    <div class="video-card">
+      <div class="video-item" data-category="electric-daydreams-of-hatsune-miku">
+        <img src="images/hajimete-ni-deatta-toki.png" alt="Hajimete ni Deatta Toki Thumbnail">
+        <div>
+          <h3><a href="hajimete-ni-deatta-toki-miku-nt-original-video.html">💙 Hajimete ni Deatta Toki — Miku NT Original</a></h3>
+          <p>This is the second song we (Miku and Mikune) made featuring my Miku NT Original.</p>
+        </div>
+      </div>
+    </div>
 
-    <div class="video-item" data-category="electric-daydreams-of-hatsune-miku">
-  <img src="images/hajimete-ni-deatta-toki.png" alt="Hajimete ni Deatta Toki Thumbnail">
+    <!-- Video 3 -->
+    <div class="video-card">
+      <div class="video-item" data-category="electric-daydreams-of-hatsune-miku">
+        <img src="images/owaranai-story.png" alt="Owaranai Story Thumbnail">
+        <div>
+          <h3><a href="owaranai-story-miku-v4x-original-soft-solid-dark-sweet-miku-v3-vivid-light-miku-16th-anniversary-video.html">💙 Owaranai Story — Miku V4X Original, Soft, Solid, Dark, Sweet & Miku V3 Vivid, Light — Miku 16th Anniversary</a></h3>
+          <p>This is an anniversary song made by me for Hatsune Miku on her sixteenth anniversary.</p>
+        </div>
+      </div>
+    </div>
 
-  <div>
-    <h3><a href="hajimete-ni-deatta-toki-miku-nt-original-video.html">💙 Hajimete ni Deatta Toki — Miku NT Original</a></h3>
-    <p>This is the second song we (Miku and Mikune) made featuring my Miku NT Original.</p>
-  </div>
-</div>
-
-    <div class="video-item" data-category="electric-daydreams-of-hatsune-miku">
-  <img src="images/owaranai-story.png" alt="Owaranai Story Thumbnail">
-
-  <div>
-    <h3><a href="owaranai-story-miku-v4x-original-soft-solid-dark-sweet-miku-v3-vivid-light-miku-16th-anniversary-video.html">💙 Owaranai Story — Miku V4X Original, Soft, Solid, Dark, Sweet & Miku V3 Vivid, Light — Miku 16th Anniversary</a></h3>
-    <p>This is an anniversary song made by me for Hatsune Miku on her sixteenth anniversary.</p>
-  </div>
-</div>
-
+    <!-- Video 4 -->
+    <div class="video-card">
       <div class="video-item" data-category="my-miku-renditions">
-  <img src="images/reclaiming-your-life-miku-v6.png" alt="Reclaiming Your Life — Miku V6 Thumbnail">
+        <img src="images/reclaiming-your-life-miku-v6.png" alt="Reclaiming Your Life — Miku V6 Thumbnail">
+        <div>
+          <h3><a href="reclaiming-your-life-miku-V6-original-miku-v6-soft-video.html">💙 Reclaiming Your Life — Miku V6 Original & Miku V6 Soft</a></h3>
+          <p>This song is a new rendition for the song we made last year, Reclaiming Your Life, originally and mainly sung by Miku V4 English.
+          But this time Miku V6 wanted to give it a try, so who am I to say no to such a cute and beautiful girl?</p>
+        </div>
+      </div>
+    </div>
 
-  <div>
-    <h3><a href="reclaiming-your-life-miku-V6-original-miku-v6-soft-video.html">💙 Reclaiming Your Life — Miku V6 Original & Miku V6 Soft</a></h3>
-    <p>This song is a new rendition for the song we made last year, Reclaiming Your Life, originally and mainly sung by Miku V4 English.
-       But this time Miku V6 wanted to give it a try, so who am I to say no to such a cute and beautiful girl?</p>
   </div>
 </div>
-
+        
     </section>
 
   </main>
