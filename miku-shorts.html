@@ -222,6 +222,60 @@
   <!-- Shared Footer -->
   <div id="site-footer"></div>
 
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const categoryButtons = document.querySelectorAll(".video-categories li");
+  const videos = document.querySelectorAll(".video-item");
+
+  const mainCategory = document.getElementById("main-album-category");
+  const subcategoryBox = document.getElementById("album-subcategories");
+
+  let subcategoriesVisible = false;
+
+  // Toggle subcategories when clicking main category
+  mainCategory.addEventListener("click", () => {
+    subcategoriesVisible = !subcategoriesVisible;
+    subcategoryBox.style.display = subcategoriesVisible ? "block" : "none";
+
+    // Activate main category
+    categoryButtons.forEach(b => b.classList.remove("active"));
+    mainCategory.classList.add("active");
+
+    // Show all videos from all album subcategories
+    videos.forEach(video => {
+      const cat = video.dataset.category;
+      if (cat.startsWith("electric-daydreams-of-hatsune-miku")) {
+        video.style.display = "flex";
+      } else {
+        video.style.display = "none";
+      }
+    });
+  });
+
+  // Normal filtering for all other categories
+  categoryButtons.forEach(btn => {
+    if (btn === mainCategory) return; // skip main category here
+
+    btn.addEventListener("click", () => {
+      categoryButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const category = btn.dataset.category;
+
+      videos.forEach(video => {
+        const videoCat = video.dataset.category;
+
+        if (category === "all" || videoCat === category) {
+          video.style.display = "flex";
+        } else {
+          video.style.display = "none";
+        }
+      });
+    });
+  });
+});
+</script>                  
+
   <!-- Include shared header/footer -->
   <script>
     fetch('/header.html')
