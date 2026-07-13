@@ -639,6 +639,18 @@ body.miku-birthday {
     color: #7aa5a3;
 }
 
+/* Album sections */
+.album-section {
+  margin-top: 40px;
+}
+
+/* Album link */
+.album-link {
+  color: #003b46;
+  text-decoration: none;
+}
+
+/* Album card layout */
 .album-card {
   display: flex;
   align-items: center;
@@ -649,6 +661,7 @@ body.miku-birthday {
   box-shadow: 0 0 10px rgba(0, 150, 180, 0.15);
 }
 
+/* Album thumbnail */
 .album-thumb {
   width: 160px;
   height: 160px;
@@ -657,26 +670,26 @@ body.miku-birthday {
   margin-right: 20px;
 }
 
+/* Album title */
 .album-title {
   margin: 0;
   color: #003b46;
 }
 
+/* Album description */
 .album-desc {
   margin-top: 8px;
   color: #005b63;
 }
 
-.section-link {
-  color: #003b46;
-  text-decoration: none;
-}
-
+/* Special section */
 .special-section {
+  margin-top: 60px;
   border-top: 3px solid #0096b4;
   padding-top: 30px;
 }
 
+/* Special card */
 .special-card {
   display: flex;
   align-items: center;
@@ -687,6 +700,7 @@ body.miku-birthday {
   box-shadow: 0 0 12px rgba(0, 150, 180, 0.18);
 }
 
+/* Special thumbnail */
 .special-thumb {
   width: 170px;
   height: 170px;
@@ -695,3 +709,13 @@ body.miku-birthday {
   margin-right: 22px;
 }
 
+/* Special description */
+.special-desc {
+  margin-top: 8px;
+  color: #007a8a;
+}
+
+/* Special title */
+.special-title {
+  color: #007a8a;
+}
