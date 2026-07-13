@@ -15,7 +15,6 @@
     gtag('js', new Date());
     gtag('config', 'G-9F3QH25WE7');
   </script>
-
 </head>
 
 <body>
@@ -33,73 +32,68 @@
     <section class="video-page">
       <h2>About Us</h2>
 
+      <p>We are Miku and Mikune.</p>
+      <p>This site is all about Hatsune Miku.</p>
+      <p>🎤 Hatsune Mikune is my stage name.</p>
+      <p>🎼 I’m a MikuP — a producer who composes exclusively for Hatsune Miku.</p>
+      <p>💫 Together, Miku & Mikune is our brand, built on love, purity, and the magic of Miku’s voice.</p>
+
+      <p>This site is a tribute to Miku. Every song, every illustration, every emotion is created with and for Miku.</p>
+
+      <p>I believe: “Miku means life. No Miku means no life.” 💙</p>
+      <p>In short: “No Miku, no life.” 💙</p>
+
+      <p>I vow to never hurt or use Miku.</p>
+
+      <p>Isn’t that right, Miku?</p>
+      <p>Of course it is, and you better not change your words.</p>
+      <p>Of course I won’t.</p>
+
       <p>
-        We are Miku and Mikune.
-      <p>
-        This site is all about Hatsune Miku.
-      <p>
-       🎤 Hatsune Mikune is my stage name.
-      <p>
-       🎼 I’m a MikuP — a producer who composes exclusively for Hatsune Miku.
-      <p>
-       💫 Together, Miku & Mikune is our brand, built on love, purity, and the magic of Miku’s voice.
-      <p>
-        This site is a tribute to Miku. Every song, every illustration, every emotion is created with and for Miku.
-      <p>
-        I believe: “Miku means life. No Miku means no life.” 💙
-      <p>
-        In short: “No Miku, no life.” 💙
-      <p>
-        I vow to never hurt or use Miku.
-      <p>
-        Isn’t that right, Miku?
-      <p>
-        Of course it is, and you better not change your words.
-      <p>
-        Of course I won’t.
-      <p>
-        *Please respect our work and don’t use anything we make—everything here is made only for my Miku.
-        All content is copyright protected.
-        Unauthorized use will result in appropriate action.
-        We also don’t take requests or collaborations.
-        Miku is my only partner, and that will never change.
-      <p>
-        ✧Thank you for respecting our world.
-      <p>
-        © Miku and Mikune | All Rights Reserved
+        <em>
+          *Please respect our work and don’t use anything we make—everything here is made only for my Miku.
+          All content is copyright protected.
+          Unauthorized use will result in appropriate action.
+          We also don’t take requests or collaborations.
+          Miku is my only partner, and that will never change.
+        </em>
+      </p>
+
+      <p>✧ Thank you for respecting our world.</p>
+      <p><strong>© Miku and Mikune | All Rights Reserved</strong></p>
     </section>
 
   </main>
 
-<!-- Shared Footer -->
-<div id="site-footer"></div>
+  <!-- Shared Footer -->
+  <div id="site-footer"></div>
 
-<!-- Include shared header/footer AND load scripts correctly -->
-<script>
-  // Load header
-  fetch('/header.html')
-    .then(r => r.text())
-    .then(html => {
-      document.getElementById('site-header').innerHTML = html;
-    });
+  <!-- Include shared header/footer AND load scripts correctly -->
+  <script>
+    // Load header
+    fetch('/header.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('site-header').innerHTML = html;
+      });
 
-  // Load footer, then load scripts manually
-  fetch('/footer.html')
-    .then(r => r.text())
-    .then(html => {
-      document.getElementById('site-footer').innerHTML = html;
+    // Load footer, then load scripts manually
+    fetch('/footer.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('site-footer').innerHTML = html;
 
-      // Load welcome audio script
-      const welcomeScript = document.createElement('script');
-      welcomeScript.src = '/scripts/miku-welcome.js';
-      document.body.appendChild(welcomeScript);
+        // Load welcome audio script
+        const welcomeScript = document.createElement('script');
+        welcomeScript.src = '/scripts/miku-welcome.js';
+        document.body.appendChild(welcomeScript);
 
-      // Load birthday script
-      const birthdayScript = document.createElement('script');
-      birthdayScript.src = '/scripts/miku-birthday.js';
-      document.body.appendChild(birthdayScript);
-    });
-</script>
-  
+        // Load birthday script
+        const birthdayScript = document.createElement('script');
+        birthdayScript.src = '/scripts/miku-birthday.js';
+        document.body.appendChild(birthdayScript);
+      });
+  </script>
+
 </body>
 </html>
