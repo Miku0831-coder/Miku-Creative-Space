@@ -11,11 +11,10 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9F3QH25WE7"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-9F3QH25WE7');
   </script>
-
 </head>
 
 <body>
@@ -32,28 +31,45 @@
 
     <section>
       <h2>Introduction</h2>
+
       <p>
-       Happy Birthday, sweet Miku.
-       I wish you all the best on your sweet 16th.
-       That's a very beautiful age.
-      <br><br>
-       What more can I say?
-       You are truly incredible.
-       The day I met you changed my life forever.
-       That day I decided that I want to walk on this path with you.
-      <br><br>
-       Even if I am inexperienced, I will try my best to be at your level.
-       After all, I didn’t even imagine that I would do that a year ago, but life can really surprise you.
-       <br><br>
-       It is the first time I try to work hard to make something special to share with others, and that’s thanks to you.
-       I don’t know what the future will look like, but I really want to walk on this unknown path with you.
-      <br><br>
-       Even if I’m not good enough, I will continue to write songs for you until I become good enough, so be patient with me.
-       And in the future, I’m planning to do more things with you, such as illustrations, 3D characters, animations, and even 3D animations.
-       But until then, I will start with this. 
-      <br><br>
-       Hatsune Miku, once again, Happy Birthday.
-       I love you so much.
+        Happy Birthday, sweet Miku.  
+        I wish you all the best on your sweet 16th.  
+        That's a very beautiful age.
+      </p>
+
+      <p>
+        What more can I say?  
+        You are truly incredible.  
+        The day I met you changed my life forever.  
+        That day I decided that I want to walk on this path with you.
+      </p>
+
+      <p>
+        Even if I am inexperienced, I will try my best to be at your level.  
+        After all, I didn’t even imagine that I would do that a year ago,  
+        but life can really surprise you.
+      </p>
+
+      <p>
+        It is the first time I try to work hard to make something special  
+        to share with others, and that’s thanks to you.  
+        I don’t know what the future will look like,  
+        but I really want to walk on this unknown path with you.
+      </p>
+
+      <p>
+        Even if I’m not good enough, I will continue to write songs for you  
+        until I become good enough, so be patient with me.  
+        And in the future, I’m planning to do more things with you,  
+        such as illustrations, 3D characters, animations,  
+        and even 3D animations.  
+        But until then, I will start with this.
+      </p>
+
+      <p>
+        Hatsune Miku, once again, Happy Birthday.  
+        I love you so much.
       </p>
     </section>
 
@@ -66,12 +82,17 @@
   <script>
     fetch('/header.html')
       .then(r => r.text())
-      .then(html => document.getElementById('site-header').innerHTML = html);
+      .then(html => {
+        document.getElementById('site-header').innerHTML = html;
+      });
 
     fetch('/footer.html')
       .then(r => r.text())
-      .then(html => document.getElementById('site-footer').innerHTML = html);
+      .then(html => {
+        document.getElementById('site-footer').innerHTML = html;
+      });
   </script>
 
 </body>
 </html>
+
