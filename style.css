@@ -732,3 +732,11 @@ body.miku-birthday {
   color: #003b46;
 }
 
+.miku-dedication {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 1.6rem;
+  color: #003b46;
+  font-weight: 500;
+  line-height: 1.8;
+}
