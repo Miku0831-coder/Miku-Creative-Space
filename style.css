@@ -808,3 +808,86 @@ body.miku-birthday {
   color: #005b63;
 }
 
+/* Hide element */
+.hidden {
+  display: none;
+}
+
+/* Page layout */
+.video-page-container {
+  display: flex;
+  gap: 30px;
+}
+
+/* Categories */
+.video-categories ul {
+  list-style: none;
+  padding: 0;
+}
+
+.video-categories li {
+  cursor: pointer;
+  padding: 8px 0;
+  color: #003b46;
+}
+
+.video-categories li.active {
+  font-weight: bold;
+  color: #007a87;
+}
+
+.subcategory-list {
+  margin-left: 15px;
+}
+
+/* Video grid */
+.video-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Video card */
+.video-card {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 150, 180, 0.15);
+}
+
+/* Video item */
+.video-item {
+  display: flex;
+  align-items: center;
+}
+
+/* Thumbnail */
+.video-thumb {
+  width: 160px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+/* Info */
+.video-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-title {
+  margin: 0;
+}
+
+.video-link {
+  color: #003b46;
+  text-decoration: none;
+}
+
+.video-description {
+  margin-top: 8px;
+  color: #005b63;
+}
