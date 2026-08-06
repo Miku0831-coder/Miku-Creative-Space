@@ -891,3 +891,44 @@ body.miku-birthday {
   margin-top: 8px;
   color: #005b63;
 }
+
+.video-outer-box {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 150, 180, 0.15);
+  margin-bottom: 20px;
+}
+
+.video-thumb {
+  width: 160px;
+  height: auto;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.subcategory-box.hidden {
+  display: none;
+}
+
+.video-card {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 150, 180, 0.15);
+  margin-bottom: 20px;
+}
+
+.video-item {
+  display: flex;
+  align-items: center;
+}
+
+.video-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
