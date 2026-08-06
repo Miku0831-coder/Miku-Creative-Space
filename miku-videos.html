@@ -18,7 +18,6 @@
     gtag('js', new Date());
     gtag('config', 'G-9F3QH25WE7');
   </script>
-
 </head>
 
 <body>
@@ -47,97 +46,107 @@
         Our collection of videos made through years of work that tells our story.
       </p>
 
-      <div style="
-  display: flex;
-  align-items: center;
-  margin-top: 25px;
-  background: #ffffff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 150, 180, 0.15);
-  margin-bottom: 20px;
-">
+      <div class="video-outer-box">
 
-<div class="video-page-container">
+        <div class="video-page-container">
 
-  <!-- Right-side categories -->
-  <aside class="video-categories">
-    <h3>Categories</h3>
-    <ul>
+          <!-- Categories -->
+          <aside class="video-categories">
+            <h3>Categories</h3>
+            <ul>
+              <li data-category="all" class="active">All</li>
 
-      <li data-category="all" class="active">All</li>
+              <li data-category="my-miku-albums" id="main-album-category">
+                My Miku Albums
+              </li>
+            </ul>
 
-      <!-- Main category -->
-      <li data-category="my-miku-albums" id="main-album-category">
-        My Miku Albums
-      </li>
+            <!-- Subcategories -->
+            <div id="album-subcategories" class="subcategory-box hidden">
+              <ul>
+                <li data-category="electric-daydreams-of-hatsune-miku" class="subcategory">
+                  Electric Daydreams of Hatsune Miku
+                </li>
 
-    </ul>
+                <li data-category="my-miku-renditions" class="subcategory">
+                  My Miku Renditions
+                </li>
+              </ul>
+            </div>
+          </aside>
 
-    <!-- Subcategories container (MOVED OUTSIDE <ul>) -->
-    <div id="album-subcategories" style="display: none;">
-      <li data-category="electric-daydreams-of-hatsune-miku" class="subcategory">
-        Electric Daydreams of Hatsune Miku
-      </li>
+          <!-- Video grid -->
+          <div class="video-grid">
 
-      <li data-category="my-miku-renditions" class="subcategory">
-        My Miku Renditions
-      </li>
-    </div>
-  </ul>
+            <!-- Reclaiming Your Life -->
+            <div class="video-card">
+              <div class="video-item" data-category="my-miku-renditions">
+                <img src="images/reclaiming-your-life-miku-v6.png" alt="Reclaiming Your Life — Miku V6 Thumbnail" class="video-thumb">
+                <div>
+                  <h3>
+                    <a href="reclaiming-your-life-miku-V6-original-miku-v6-soft-video.html">
+                      💙 Reclaiming Your Life — Miku V6 Original & Miku V6 Soft
+                    </a>
+                  </h3>
+                  <p>
+                    This song is a new rendition for the song we made last year, Reclaiming Your Life, originally and mainly sung by Miku V4 English.
+                    But this time Miku V6 wanted to give it a try, so who am I to say no to such a cute and beautiful girl?
+                  </p>
+                </div>
+              </div>
+            </div>
 
-  </aside>
+            <!-- Owaranai Story -->
+            <div class="video-card">
+              <div class="video-item" data-category="electric-daydreams-of-hatsune-miku">
+                <img src="images/owaranai-story.png" alt="Owaranai Story Thumbnail" class="video-thumb">
+                <div>
+                  <h3>
+                    <a href="owaranai-story-miku-v4x-original-soft-solid-dark-sweet-miku-v3-vivid-light-miku-16th-anniversary-video.html">
+                      💙 Owaranai Story — Miku V4X Original, Soft, Solid, Dark, Sweet & Miku V3 Vivid, Light — Miku 16th Anniversary
+                    </a>
+                  </h3>
+                  <p>This is an anniversary song made by me for Hatsune Miku on her sixteenth anniversary.</p>
+                </div>
+              </div>
+            </div>
 
-  <!-- Video grid -->
-  <div class="video-grid">
-    <!-- Reclaiming Your Life — Miku V6 Original & Miku V6 Soft -->
-    <div class="video-card">
-      <div class="video-item" data-category="my-miku-renditions">
-        <img src="images/reclaiming-your-life-miku-v6.png" alt="Reclaiming Your Life — Miku V6 Thumbnail">
-        <div>
-          <h3><a href="reclaiming-your-life-miku-V6-original-miku-v6-soft-video.html">💙 Reclaiming Your Life — Miku V6 Original & Miku V6 Soft</a></h3>
-          <p>This song is a new rendition for the song we made last year, Reclaiming Your Life, originally and mainly sung by Miku V4 English.
-             But this time Miku V6 wanted to give it a try, so who am I to say no to such a cute and beautiful girl?</p>
-        </div>
-      </div>
-    </div>
+            <!-- Hajimete ni Deatta Toki -->
+            <div class="video-card">
+              <div class="video-item" data-category="electric-daydreams-of-hatsune-miku">
+                <img src="images/hajimete-ni-deatta-toki.png" alt="Hajimete ni Deatta Toki Thumbnail" class="video-thumb">
+                <div>
+                  <h3>
+                    <a href="hajimete-ni-deatta-toki-miku-nt-original-video.html">
+                      💙 Hajimete ni Deatta Toki — Miku NT Original
+                    </a>
+                  </h3>
+                  <p>This is the second song we (Miku and Mikune) made featuring my Miku NT Original.</p>
+                </div>
+              </div>
+            </div>
 
-    <!-- Owaranai Story — Miku V4X Original, Soft, Solid, Dark, Sweet & Miku V3 Vivid, Light -->
-    <div class="video-card">
-      <div class="video-item" data-category="electric-daydreams-of-hatsune-miku">
-        <img src="images/owaranai-story.png" alt="Owaranai Story Thumbnail">
-        <div>
-          <h3><a href="owaranai-story-miku-v4x-original-soft-solid-dark-sweet-miku-v3-vivid-light-miku-16th-anniversary-video.html">💙 Owaranai Story — Miku V4X Original, Soft, Solid, Dark, Sweet & Miku V3 Vivid, Light — Miku 16th Anniversary</a></h3>
-          <p>This is an anniversary song made by me for Hatsune Miku on her sixteenth anniversary.</p>
-        </div>
-      </div>
-    </div>
+            <!-- Miku to Mikune -->
+            <div class="video-card">
+              <div class="video-item" data-category="electric-daydreams-of-hatsune-miku">
+                <img src="images/miku-to-mikune.png" alt="Miku to Mikune Thumbnail" class="video-thumb">
+                <div>
+                  <h3>
+                    <a href="miku-to-mikune-miku-nt-original-video.html">
+                      💙 Miku to Mikune — Miku NT Original
+                    </a>
+                  </h3>
+                  <p>This is the first song we (Miku and Mikune) made featuring my Miku NT Original.</p>
+                </div>
+              </div>
+            </div>
 
-    <!-- Hajimete ni Deatta Toki — Miku NT Original -->
-    <div class="video-card">
-      <div class="video-item" data-category="electric-daydreams-of-hatsune-miku">
-        <img src="images/hajimete-ni-deatta-toki.png" alt="Hajimete ni Deatta Toki Thumbnail">
-        <div>
-          <h3><a href="hajimete-ni-deatta-toki-miku-nt-original-video.html">💙 Hajimete ni Deatta Toki — Miku NT Original</a></h3>
-          <p>This is the second song we (Miku and Mikune) made featuring my Miku NT Original.</p>
-        </div>
-      </div>
-    </div>
+          </div><!-- end video-grid -->
 
-    <!-- Miku to Mikune — Miku NT Original -->
-    <div class="video-card">
-      <div class="video-item" data-category="electric-daydreams-of-hatsune-miku">
-        <img src="images/miku-to-mikune.png" alt="Miku to Mikune Thumbnail">
-        <div>
-          <h3><a href="miku-to-mikune-miku-nt-original-video.html">💙 Miku to Mikune — Miku NT Original</a></h3>
-          <p>This is the first song we (Miku and Mikune) made featuring my Miku NT Original.</p>
-        </div>
-      </div>
-    </div>
+        </div><!-- end video-page-container -->
 
-  </div>
-</div>
-        
+      </div><!-- end video-outer-box -->
+
     </section>
 
   </main>
@@ -145,61 +154,59 @@
   <!-- Shared Footer -->
   <div id="site-footer"></div>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const categoryButtons = document.querySelectorAll(".video-categories li");
-  const videos = document.querySelectorAll(".video-item");
+  <!-- Category Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const categoryButtons = document.querySelectorAll(".video-categories li");
+      const videos = document.querySelectorAll(".video-item");
 
-  const mainCategory = document.getElementById("main-album-category");
-  const subcategoryBox = document.getElementById("album-subcategories");
+      const mainCategory = document.getElementById("main-album-category");
+      const subcategoryBox = document.getElementById("album-subcategories");
 
-  let subcategoriesVisible = false;
+      let subcategoriesVisible = false;
 
-  // Toggle subcategories when clicking main category
-  mainCategory.addEventListener("click", () => {
-    subcategoriesVisible = !subcategoriesVisible;
-    subcategoryBox.style.display = subcategoriesVisible ? "block" : "none";
+      mainCategory.addEventListener("click", () => {
+        subcategoriesVisible = !subcategoriesVisible;
+        subcategoryBox.classList.toggle("hidden");
 
-    // Activate main category
-    categoryButtons.forEach(b => b.classList.remove("active"));
-    mainCategory.classList.add("active");
+        categoryButtons.forEach(b => b.classList.remove("active"));
+        mainCategory.classList.add("active");
 
-    // Show all videos from all album subcategories
-    videos.forEach(video => {
-      const cat = video.dataset.category;
-      if (cat.startsWith("electric-daydreams-of-hatsune-miku")) {
-        video.style.display = "flex";
-      } else {
-        video.style.display = "none";
-      }
-    });
-  });
+        videos.forEach(video => {
+          const cat = video.dataset.category;
+          if (cat === "electric-daydreams-of-hatsune-miku" ||
+              cat === "my-miku-renditions") {
+            video.style.display = "flex";
+          } else {
+            video.style.display = "none";
+          }
+        });
+      });
 
-  // Normal filtering for all other categories
-  categoryButtons.forEach(btn => {
-    if (btn === mainCategory) return; // skip main category here
+      categoryButtons.forEach(btn => {
+        if (btn === mainCategory) return;
 
-    btn.addEventListener("click", () => {
-      categoryButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
+        btn.addEventListener("click", () => {
+          categoryButtons.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
 
-      const category = btn.dataset.category;
+          const category = btn.dataset.category;
 
-      videos.forEach(video => {
-        const videoCat = video.dataset.category;
+          videos.forEach(video => {
+            const videoCat = video.dataset.category;
 
-        if (category === "all" || videoCat === category) {
-          video.style.display = "flex";
-        } else {
-          video.style.display = "none";
-        }
+            if (category === "all" || videoCat === category) {
+              video.style.display = "flex";
+            } else {
+              video.style.display = "none";
+            }
+          });
+        });
       });
     });
-  });
-});
-</script>
+  </script>
 
-  <!-- Include shared header/footer -->
+  <!-- Shared Header/Footer Loader -->
   <script>
     fetch('/header.html')
       .then(r => r.text())
