@@ -750,3 +750,61 @@ body.miku-birthday {
   font-weight: 500;
   line-height: 1.8;
 }
+
+/* Grid container */
+.video-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card container */
+.video-card {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 15px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 150, 180, 0.15);
+}
+
+/* Inner item layout */
+.video-item {
+  display: flex;
+  align-items: center;
+}
+
+/* Thumbnail */
+.video-thumb {
+  width: 160px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+/* Info wrapper */
+.video-info {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title */
+.video-title {
+  margin: 0;
+}
+
+/* Link */
+.video-link {
+  color: #003b46;
+  text-decoration: none;
+}
+
+/* Description */
+.video-description {
+  margin-top: 8px;
+  color: #005b63;
+}
+
