@@ -153,7 +153,7 @@
   <!-- Shared Footer -->
   <div id="site-footer"></div>
 
-  <!-- Category Script -->
+  <!-- Category Filtering Script -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const categoryButtons = document.querySelectorAll(".video-categories li");
@@ -164,6 +164,7 @@
 
       let subcategoriesVisible = false;
 
+      // Toggle subcategories
       mainCategory.addEventListener("click", () => {
         subcategoriesVisible = !subcategoriesVisible;
         subcategoryBox.classList.toggle("hidden");
@@ -175,13 +176,14 @@
           const cat = video.dataset.category;
           if (cat === "electric-daydreams-of-hatsune-miku" ||
               cat === "my-miku-renditions") {
-            video.style.display = "flex";
+            video.parentElement.style.display = "flex";
           } else {
-            video.style.display = "none";
+            video.parentElement.style.display = "none";
           }
         });
       });
 
+      // Normal filtering
       categoryButtons.forEach(btn => {
         if (btn === mainCategory) return;
 
@@ -195,9 +197,9 @@
             const videoCat = video.dataset.category;
 
             if (category === "all" || videoCat === category) {
-              video.style.display = "flex";
+              video.parentElement.style.display = "flex";
             } else {
-              video.style.display = "none";
+              video.parentElement.style.display = "none";
             }
           });
         });
