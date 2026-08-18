@@ -275,59 +275,112 @@
   <!-- Shared Footer -->
   <div id="site-footer"></div>
 
-  <!-- Category Filtering Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const categoryButtons = document.querySelectorAll(".video-categories li");
-      const videos = document.querySelectorAll(".video-item");
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
-      const mainCategory = document.getElementById("main-album-category");
-      const subcategoryBox = document.getElementById("album-subcategories");
+  const categoryButtons = document.querySelectorAll(".video-categories li");
+  const videos = document.querySelectorAll(".video-item");
 
-      let subcategoriesVisible = false;
+  // Main categories
+  const mainAlbum = document.getElementById("main-album-category");
+  const mainVtuber = document.getElementById("main-vtuber-miku-category");
+  const mainComparisons = document.getElementById("main-comparisons-category");
 
-      // Toggle subcategories
-      mainCategory.addEventListener("click", () => {
-        subcategoriesVisible = !subcategoriesVisible;
-        subcategoryBox.classList.toggle("hidden");
+  // Subcategory lists
+  const albumSubs = document.getElementById("album-subcategories");
+  const vtuberSubs = document.getElementById("vtuber-miku-subcategories");
 
-        categoryButtons.forEach(b => b.classList.remove("active"));
-        mainCategory.classList.add("active");
+  // Hide all subcategory lists initially
+  albumSubs.classList.add("hidden");
+  vtuberSubs.classList.add("hidden");
 
-        videos.forEach(video => {
-          const cat = video.dataset.category;
-          if (cat === "electric-daydreams-of-hatsune-miku" ||
-              cat === "my-miku-renditions") {
-            video.parentElement.style.display = "flex";
-          } else {
-            video.parentElement.style.display = "none";
-          }
-        });
-      });
+  // Helper: show only videos of a category
+  function filterCategory(category) {
+    videos.forEach(video => {
+      const card = video.closest(".video-card");
+      const videoCat = video.dataset.category;
 
-      // Normal filtering
-      categoryButtons.forEach(btn => {
-        if (btn === mainCategory) return;
-
-        btn.addEventListener("click", () => {
-          categoryButtons.forEach(b => b.classList.remove("active"));
-          btn.classList.add("active");
-
-          const category = btn.dataset.category;
-
-          videos.forEach(video => {
-            const videoCat = video.dataset.category;
-
-            if (category === "all" || videoCat === category) {
-              video.parentElement.style.display = "flex";
-            } else {
-              video.parentElement.style.display = "none";
-            }
-          });
-        });
-      });
+      if (category === "all" || videoCat === category) {
+        card.style.display = "flex";
+      } else {
+        card.style.display = "none";
+      }
     });
-  </script>
+  }
+
+  // Helper: show multiple categories (for main categories)
+  function filterMultiple(categories) {
+    videos.forEach(video => {
+      const card = video.closest(".video-card");
+      const videoCat = video.dataset.category;
+
+      if (categories.includes(videoCat)) {
+        card.style.display = "flex";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+
+  // MAIN CATEGORY: My Miku Albums
+  mainAlbum.addEventListener("click", () => {
+    albumSubs.classList.toggle("hidden");
+    vtuberSubs.classList.add("hidden");
+
+    categoryButtons.forEach(b => b.classList.remove("active"));
+    mainAlbum.classList.add("active");
+
+    filterMultiple([
+      "electric-daydreams-of-hatsune-miku",
+      "multi-faceted-personalities-of-hatsune-miku-part-i",
+      "my-miku-renditions"
+    ]);
+  });
+
+  // MAIN CATEGORY: Vtuber Miku
+  mainVtuber.addEventListener("click", () => {
+    vtuberSubs.classList.toggle("hidden");
+    albumSubs.classList.add("hidden");
+
+    categoryButtons.forEach(b => b.classList.remove("active"));
+    mainVtuber.classList.add("active");
+
+    filterMultiple([
+      "my-miku-credits",
+      "my-miku-teasers"
+    ]);
+  });
+
+  // MAIN CATEGORY: My Miku Comparisons
+  mainComparisons.addEventListener("click", () => {
+    albumSubs.classList.add("hidden");
+    vtuberSubs.classList.add("hidden");
+
+    categoryButtons.forEach(b => b.classList.remove("active"));
+    mainComparisons.classList.add("active");
+
+    filterCategory("my-miku-comparisons");
+  });
+
+  // NORMAL FILTERING (subcategories + All)
+  categoryButtons.forEach(btn => {
+    if (
+      btn === mainAlbum ||
+      btn === mainVtuber ||
+      btn === mainComparisons
+    ) return;
+
+    btn.addEventListener("click", () => {
+      categoryButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const category = btn.dataset.category;
+      filterCategory(category);
+    });
+  });
+
+});
+</script>
 
   <!-- Shared header/footer loader -->
   <script>
