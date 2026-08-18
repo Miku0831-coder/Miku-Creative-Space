@@ -932,3 +932,35 @@ body.miku-birthday {
   flex-direction: column;
   gap: 20px;
 }
+
+.illustration-card {
+  margin-top: 24px;
+  padding: 20px;
+  background: #f7f7fb;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.illustration-card h3 {
+  margin-top: 0;
+  font-weight: 600;
+  color: #6a7fa6;
+}
+
+.illustration-frame {
+  margin: 16px 0;
+  text-align: center;
+}
+
+.illustration-frame img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.illustration-note {
+  font-size: 0.9rem;
+  color: #777;
+  text-align: center;
+  margin-top: 12px;
+}
