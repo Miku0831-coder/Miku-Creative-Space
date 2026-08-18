@@ -964,13 +964,3 @@ body.miku-birthday {
   text-align: center;
   margin-top: 12px;
 }
-
-.links .link-item {
-  margin: 10px 0;
-}
-
-.links .link-item a {
-  display: block;
-  font-size: 1rem;
-  padding: 6px 0;
-}
