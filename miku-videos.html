@@ -218,7 +218,9 @@
         videos.forEach(video => {
           const cat = video.dataset.category;
           if (cat === "electric-daydreams-of-hatsune-miku" ||
-              cat === "my-miku-renditions") {
+              cat === "my-miku-renditions" ||
+              cat === "multi-faceted-personalities-of-hatsune-miku-part-i") {
+
             video.parentElement.style.display = "flex";
           } else {
             video.parentElement.style.display = "none";
