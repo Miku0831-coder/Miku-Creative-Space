@@ -196,6 +196,8 @@
   <!-- Shared Footer -->
   <div id="site-footer"></div>
 
+  <script src="/scripts/site-loader.js"></script>
+
   <!-- Category Filtering Script -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -250,17 +252,6 @@
         });
       });
     });
-  </script>
-
-  <!-- Shared Header/Footer Loader -->
-  <script>
-    fetch('/header.html')
-      .then(r => r.text())
-      .then(html => document.getElementById('site-header').innerHTML = html);
-
-    fetch('/footer.html')
-      .then(r => r.text())
-      .then(html => document.getElementById('site-footer').innerHTML = html);
   </script>
 
 </body>
