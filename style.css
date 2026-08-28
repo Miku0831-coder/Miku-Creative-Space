@@ -863,13 +863,10 @@ body.miku-birthday {
   align-items: center;
 }
 
-/* Thumbnail */
 .video-thumb {
   width: 160px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-right: 20px;
+  height: auto;
+  object-fit: contain;
 }
 
 /* Info */
