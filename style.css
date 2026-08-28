@@ -863,12 +863,6 @@ body.miku-birthday {
   align-items: center;
 }
 
-.video-thumb {
-  width: 160px;
-  height: auto;
-  object-fit: contain;
-}
-
 /* Info */
 .video-info {
   display: flex;
