@@ -5,36 +5,39 @@
     // TEST MODE — set to true to force birthday effect any day
     const TEST_MODE = false;
 
-    const today = new Date();
+ const today = new Date();
     const month = today.getMonth(); // 0 = January, 7 = August
     const day = today.getDate();
+
+    // Reset birthday state ONLY when user leaves the site completely
+    window.addEventListener("beforeunload", () => {
+        localStorage.removeItem("mikuBirthdayActive");
+    });
+
+    // If already shown during this site-session, do nothing
+    if (localStorage.getItem("mikuBirthdayActive")) {
+        return;
+    }
 
     // Only run on Miku's birthday OR in test mode
     if (TEST_MODE || (month === 7 && day === 31)) {
 
-        // Prevent repeating on every page during the same visit
-        if (!sessionStorage.getItem("mikuBirthdayAudioPlayed")) {
+        // Mark as shown for this site-session
+        localStorage.setItem("mikuBirthdayActive", "true");
 
-            // Birthday audio (you will add the file later)
-            const birthdayAudio = new Audio("/audio/miku-birthday.mp3");
-            birthdayAudio.volume = 0.8;
+        // Birthday audio
+        const birthdayAudio = new Audio("/audio/miku-birthday.mp3");
+        birthdayAudio.volume = 0.8;
 
-            birthdayAudio.play().catch(() => {
-                const startAudio = () => {
-                    birthdayAudio.play();
-                    document.removeEventListener("click", startAudio);
-                };
-                document.addEventListener("click", startAudio);
-            });
+        birthdayAudio.play().catch(() => {
+            const startAudio = () => {
+                birthdayAudio.play();
+                document.removeEventListener("click", startAudio);
+            };
+            document.addEventListener("click", startAudio);
+        });
 
-            // Mark as played for this session
-            sessionStorage.setItem("mikuBirthdayAudioPlayed", "true");
-        }
-
-        // Add a class to the body so you can style the whole site
-        document.body.classList.add("miku-birthday");
-
-        // Confetti effect
+        // Confetti
         const confettiScript = document.createElement("script");
         confettiScript.src = "https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js";
         confettiScript.onload = () => {
@@ -59,7 +62,16 @@
         msg.style.fontSize = "20px";
         msg.style.borderRadius = "10px";
         msg.style.zIndex = "9999";
+        msg.style.transition = "opacity 0.8s ease";
         document.body.appendChild(msg);
+
+        // Auto-hide after 5 seconds
+        setTimeout(() => {
+            msg.style.opacity = "0";
+            setTimeout(() => msg.remove(), 800);
+        }, 5000);
+
+        document.body.classList.add("miku-birthday");
     }
 
 })();
