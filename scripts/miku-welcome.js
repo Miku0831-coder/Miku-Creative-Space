@@ -1,25 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-
     const today = new Date();
     const month = today.getMonth(); // 0 = January, 7 = August
     const day = today.getDate();
 
-    // Do NOT play welcome audio on Miku's birthday
+    // Do NOT play welcome audio on Miku's birthday (August 31)
     if (month === 7 && day === 31) {
         return;
     }
 
-    // Reset welcome audio ONLY when user leaves the site completely
-    window.addEventListener("beforeunload", () => {
-        localStorage.removeItem("mikuWelcomeActive");
-    });
-
-    // If welcome audio already played during this site-session, do nothing
-    if (localStorage.getItem("mikuWelcomeActive")) {
-        return;
+    // Check if welcome audio already played this browser session
+    if (sessionStorage.getItem("mikuWelcomePlayed")) {
+        return; // Do NOT play again
     }
 
-    // Play welcome audio
     const audio = new Audio("/audio/miku-mikune.mp3");
     audio.volume = 0.7;
 
@@ -31,6 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.addEventListener("click", startAudio);
     });
 
-    // Mark welcome audio as played for this site-session
-    localStorage.setItem("mikuWelcomeActive", "true");
+    // Mark as played for this browser session
+    sessionStorage.setItem("mikuWelcomePlayed", "true");
 });
