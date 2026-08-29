@@ -51,7 +51,7 @@
 
         // Birthday popup message
         const msg = document.createElement("div");
-        msg.innerText = "🎉 Happy Birthday, Hatsune Miku 初音ミク! 🎶";
+        msg.innerText = "🎉 Happy Birthday, Hatsune Miku! 🎶";
         msg.style.position = "fixed";
         msg.style.top = "20px";
         msg.style.left = "50%";
