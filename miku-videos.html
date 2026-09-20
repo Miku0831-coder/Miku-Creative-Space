@@ -228,7 +228,6 @@
 
       let subcategoriesVisible = false;
 
-      // MAIN CATEGORY: My Miku Albums
       // Toggle subcategories
       mainCategory.addEventListener("click", () => {
         subcategoriesVisible = !subcategoriesVisible;
@@ -240,8 +239,8 @@
         videos.forEach(video => {
           const cat = video.dataset.category;
           if (cat === "electric-daydreams-of-hatsune-miku" ||
-              cat === "multi-faceted-personalities-of-hatsune-miku-part-i" ||
-              cat === "my-miku-renditions") {
+              cat === "my-miku-renditions" ||
+              cat === "multi-faceted-personalities-of-hatsune-miku-part-i") {
 
             video.parentElement.style.display = "flex";
           } else {
@@ -250,37 +249,29 @@
         });
       });
 
-        // MAIN CATEGORY: Vtuber Miku
-  mainVtuber.addEventListener("click", () => {
-    vtuberSubs.classList.toggle("hidden");
-    albumSubs.classList.add("hidden");
+      // Normal filtering
+      categoryButtons.forEach(btn => {
+        if (btn === mainCategory) return;
 
-    categoryButtons.forEach(b => b.classList.remove("active"));
-    mainVtuber.classList.add("active");
+        btn.addEventListener("click", () => {
+          categoryButtons.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
 
-    filterMultiple([
-      "my-miku-self-introductions"
-    ]);
-  });
+          const category = btn.dataset.category;
 
-      // NORMAL FILTERING (subcategories + All)
-  categoryButtons.forEach(btn => {
-    if (
-      btn === mainAlbum ||
-      btn === mainVtuber
-    ) return;
+          videos.forEach(video => {
+            const videoCat = video.dataset.category;
 
-    btn.addEventListener("click", () => {
-      categoryButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const category = btn.dataset.category;
-      filterCategory(category);
+            if (category === "all" || videoCat === category) {
+              video.parentElement.style.display = "flex";
+            } else {
+              video.parentElement.style.display = "none";
+            }
+          });
+        });
+      });
     });
-  });
-
-});
-</script>
+  </script>
   
 </body>
 </html>
