@@ -217,7 +217,6 @@
 
   <script src="/scripts/site-loader.js"></script>
 
-<!-- Category Filtering Script -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -227,12 +226,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Main categories
   const mainAlbum = document.getElementById("main-album-category");
   const mainVtuber = document.getElementById("main-vtuber-miku-category");
+  const mainComparisons = document.getElementById("main-comparisons-category");
 
-  // Subcategory boxes
+  // Subcategory lists
   const albumSubs = document.getElementById("album-subcategories");
   const vtuberSubs = document.getElementById("vtuber-miku-subcategories");
 
-  // Hide subcategories initially
+  // Hide all subcategory lists initially
   albumSubs.classList.add("hidden");
   vtuberSubs.classList.add("hidden");
 
@@ -264,9 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* -------------------------
-     MAIN CATEGORY: My Miku Albums
-     ------------------------- */
+  // MAIN CATEGORY: My Miku Albums
   mainAlbum.addEventListener("click", () => {
     albumSubs.classList.toggle("hidden");
     vtuberSubs.classList.add("hidden");
@@ -276,14 +274,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     filterMultiple([
       "electric-daydreams-of-hatsune-miku",
-      "my-miku-renditions",
-      "multi-faceted-personalities-of-hatsune-miku-part-i"
+      "multi-faceted-personalities-of-hatsune-miku-part-i",
+      "my-miku-renditions"
     ]);
   });
 
-  /* -------------------------
-     MAIN CATEGORY: Vtuber Miku
-     ------------------------- */
+  // MAIN CATEGORY: Vtuber Miku
   mainVtuber.addEventListener("click", () => {
     vtuberSubs.classList.toggle("hidden");
     albumSubs.classList.add("hidden");
@@ -296,11 +292,12 @@ document.addEventListener("DOMContentLoaded", () => {
     ]);
   });
 
-  /* -------------------------
-     NORMAL FILTERING (subcategories + All)
-     ------------------------- */
+  // NORMAL FILTERING (subcategories + All)
   categoryButtons.forEach(btn => {
-    if (btn === mainAlbum || btn === mainVtuber) return;
+    if (
+      btn === mainAlbum ||
+      btn === mainVtuber ||
+    ) return;
 
     btn.addEventListener("click", () => {
       categoryButtons.forEach(b => b.classList.remove("active"));
