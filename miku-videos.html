@@ -219,16 +219,14 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-
   const categoryButtons = document.querySelectorAll(".video-categories li");
   const videos = document.querySelectorAll(".video-item");
 
   // Main categories
   const mainAlbum = document.getElementById("main-album-category");
   const mainVtuber = document.getElementById("main-vtuber-miku-category");
-  const mainComparisons = document.getElementById("main-comparisons-category");
 
-  // Subcategory lists
+  // Subcategory containers
   const albumSubs = document.getElementById("album-subcategories");
   const vtuberSubs = document.getElementById("vtuber-miku-subcategories");
 
@@ -236,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
   albumSubs.classList.add("hidden");
   vtuberSubs.classList.add("hidden");
 
-  // Helper: show only videos of a category
+  // Helper: Filter by single category ("all" or specific data-category)
   function filterCategory(category) {
     videos.forEach(video => {
       const card = video.closest(".video-card");
@@ -250,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Helper: show multiple categories (for main categories)
+  // Helper: Filter by array of categories
   function filterMultiple(categories) {
     videos.forEach(video => {
       const card = video.closest(".video-card");
@@ -265,51 +263,59 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // MAIN CATEGORY: My Miku Albums
-  mainAlbum.addEventListener("click", () => {
-    albumSubs.classList.toggle("hidden");
-    vtuberSubs.classList.add("hidden");
+  if (mainAlbum) {
+    mainAlbum.addEventListener("click", () => {
+      albumSubs.classList.toggle("hidden");
+      vtuberSubs.classList.add("hidden");
 
-    categoryButtons.forEach(b => b.classList.remove("active"));
-    mainAlbum.classList.add("active");
+      categoryButtons.forEach(b => b.classList.remove("active"));
+      mainAlbum.classList.add("active");
 
-    filterMultiple([
-      "electric-daydreams-of-hatsune-miku",
-      "multi-faceted-personalities-of-hatsune-miku-part-i",
-      "my-miku-renditions"
-    ]);
-  });
+      filterMultiple([
+        "electric-daydreams-of-hatsune-miku",
+        "multi-faceted-personalities-of-hatsune-miku-part-i",
+        "my-miku-renditions"
+      ]);
+    });
+  }
 
   // MAIN CATEGORY: Vtuber Miku
-  mainVtuber.addEventListener("click", () => {
-    vtuberSubs.classList.toggle("hidden");
-    albumSubs.classList.add("hidden");
+  if (mainVtuber) {
+    mainVtuber.addEventListener("click", () => {
+      vtuberSubs.classList.toggle("hidden");
+      albumSubs.classList.add("hidden");
 
-    categoryButtons.forEach(b => b.classList.remove("active"));
-    mainVtuber.classList.add("active");
+      categoryButtons.forEach(b => b.classList.remove("active"));
+      mainVtuber.classList.add("active");
 
-    filterMultiple([
-      "my-miku-self-introductions"
-    ]);
-  });
+      filterMultiple([
+        "my-miku-self-introductions"
+      ]);
+    });
+  }
 
-  // NORMAL FILTERING (subcategories + All)
+  // NORMAL FILTERING (Subcategories + "All" button)
   categoryButtons.forEach(btn => {
-    if (
-      btn === mainAlbum ||
-      btn === mainVtuber ||
-    ) return;
+    // Skip main dropdown triggers (they have their own handlers above)
+    if (btn === mainAlbum || btn === mainVtuber) return;
 
     btn.addEventListener("click", () => {
       categoryButtons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
       const category = btn.dataset.category;
+
+      // If clicking "All", close submenus and reveal everything
+      if (category === "all") {
+        albumSubs.classList.add("hidden");
+        vtuberSubs.classList.add("hidden");
+      }
+
       filterCategory(category);
     });
   });
-
 });
 </script>
-
+  
 </body>
 </html>
