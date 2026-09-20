@@ -263,29 +263,24 @@
     ]);
   });
 
-      // Normal filtering
-      categoryButtons.forEach(btn => {
-        if (btn === mainCategory) return;
+      // NORMAL FILTERING (subcategories + All)
+  categoryButtons.forEach(btn => {
+    if (
+      btn === mainAlbum ||
+      btn === mainVtuber
+    ) return;
 
-        btn.addEventListener("click", () => {
-          categoryButtons.forEach(b => b.classList.remove("active"));
-          btn.classList.add("active");
+    btn.addEventListener("click", () => {
+      categoryButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
 
-          const category = btn.dataset.category;
-
-          videos.forEach(video => {
-            const videoCat = video.dataset.category;
-
-            if (category === "all" || videoCat === category) {
-              video.parentElement.style.display = "flex";
-            } else {
-              video.parentElement.style.display = "none";
-            }
-          });
-        });
-      });
+      const category = btn.dataset.category;
+      filterCategory(category);
     });
-  </script>
+  });
+
+});
+</script>
   
 </body>
 </html>
