@@ -59,6 +59,10 @@
               <li data-category="my-miku-albums" id="main-album-category">
                 My Miku Albums
               </li>
+
+              <li data-category="vtuber-miku" id="main-vtuber-category">
+              Vtuber Miku
+              </li>
             </ul>
 
             <!-- Subcategories -->
@@ -75,8 +79,13 @@
                 <li data-category="my-miku-renditions" class="subcategory">
                    My Miku Renditions
                 </li>
-              </ul>
-            </div>
+              <div id="vtuber-subcategories" class="subcategory-box hidden">
+                <ul>
+                 <li data-category="miku-self-introductions" class="subcategory">
+                   Miku Self-Introductions
+                 </li>
+            </ul>
+           </div>
           </aside>
           
           <!-- Video grid -->
@@ -217,86 +226,75 @@
 
   <script src="/scripts/site-loader.js"></script>
 
-<!-- Category Filtering Script -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
   const categoryButtons = document.querySelectorAll(".video-categories li");
   const videos = document.querySelectorAll(".video-item");
 
-  // Main categories
+  // Existing album category
   const mainAlbum = document.getElementById("main-album-category");
   const albumSubs = document.getElementById("album-subcategories");
 
+  // NEW Vtuber category
   const mainVtuber = document.getElementById("main-vtuber-category");
   const vtuberSubs = document.getElementById("vtuber-subcategories");
 
-  // Hide subcategories initially
-  albumSubs.classList.add("hidden");
-  vtuberSubs.classList.add("hidden");
-
-  // Helper: show only videos of a category
-  function filterCategory(category) {
-    videos.forEach(video => {
-      const card = video.parentElement;
-      const videoCat = video.dataset.category;
-
-      if (category === "all" || videoCat === category) {
-        card.style.display = "flex";
-      } else {
-        card.style.display = "none";
-      }
-    });
-  }
-
-  // Helper: show multiple categories (for main categories)
-  function filterMultiple(categories) {
-    videos.forEach(video => {
-      const card = video.parentElement;
-      const videoCat = video.dataset.category;
-
-      if (categories.includes(videoCat)) {
-        card.style.display = "flex";
-      } else {
-        card.style.display = "none";
-      }
-    });
-  }
+  let albumOpen = false;
+  let vtuberOpen = false;
 
   /* -------------------------
-     MAIN CATEGORY: My Miku Albums
+     My Miku Albums (existing)
      ------------------------- */
   mainAlbum.addEventListener("click", () => {
-    albumSubs.classList.toggle("hidden");
+    albumOpen = !albumOpen;
+    vtuberOpen = false;
+
+    albumSubs.classList.toggle("hidden", !albumOpen);
     vtuberSubs.classList.add("hidden");
 
     categoryButtons.forEach(b => b.classList.remove("active"));
     mainAlbum.classList.add("active");
 
-    filterMultiple([
-      "electric-daydreams-of-hatsune-miku",
-      "my-miku-renditions",
-      "multi-faceted-personalities-of-hatsune-miku-part-i"
-    ]);
+    videos.forEach(video => {
+      const cat = video.dataset.category;
+      if (
+        cat === "electric-daydreams-of-hatsune-miku" ||
+        cat === "multi-faceted-personalities-of-hatsune-miku-part-i" ||
+        cat === "my-miku-renditions"
+      ) {
+        video.parentElement.style.display = "flex";
+      } else {
+        video.parentElement.style.display = "none";
+      }
+    });
   });
 
   /* -------------------------
-     MAIN CATEGORY: Vtuber Miku
+     Vtuber Miku (new)
      ------------------------- */
   mainVtuber.addEventListener("click", () => {
-    vtuberSubs.classList.toggle("hidden");
+    vtuberOpen = !vtuberOpen;
+    albumOpen = false;
+
+    vtuberSubs.classList.toggle("hidden", !vtuberOpen);
     albumSubs.classList.add("hidden");
 
     categoryButtons.forEach(b => b.classList.remove("active"));
     mainVtuber.classList.add("active");
 
-    filterMultiple([
-      "miku-self-introductions"
-    ]);
+    videos.forEach(video => {
+      const cat = video.dataset.category;
+      if (cat === "miku-self-introductions") {
+        video.parentElement.style.display = "flex";
+      } else {
+        video.parentElement.style.display = "none";
+      }
+    });
   });
 
   /* -------------------------
-     NORMAL FILTERING (subcategories + All)
+     Normal filtering (All + subcategories)
      ------------------------- */
   categoryButtons.forEach(btn => {
     if (btn === mainAlbum || btn === mainVtuber) return;
@@ -306,7 +304,16 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.classList.add("active");
 
       const category = btn.dataset.category;
-      filterCategory(category);
+
+      videos.forEach(video => {
+        const videoCat = video.dataset.category;
+
+        if (category === "all" || videoCat === category) {
+          video.parentElement.style.display = "flex";
+        } else {
+          video.parentElement.style.display = "none";
+        }
+      });
     });
   });
 
