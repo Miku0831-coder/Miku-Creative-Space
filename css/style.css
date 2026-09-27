@@ -948,14 +948,6 @@ body.miku-birthday {
   margin-top: 12px;
 }
 
-.video-item {
-  align-items: flex-start;
-}
-
-.video-item img.video-thumb {
-  width: 220px; /* match your other thumbnails */
-}
-
-.video-item > div {
-  margin-left: 20px; /* moves the text right */
+.video-card .video-item > div {
+  padding-left: 24px;
 }
