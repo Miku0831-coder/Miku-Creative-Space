@@ -89,6 +89,10 @@
       <li data-category="my-miku-teasers" class="subcategory">
         My Miku TEASERS
       </li>
+      
+      <li data-category="miku-self-introductions" class="subcategory">
+        Miku Self-Introductions
+      </li>
     </ul>
       
       <li data-category="my-miku-comparisons" id="main-comparisons-category">
@@ -368,11 +372,11 @@ document.addEventListener("DOMContentLoaded", () => {
     categoryButtons.forEach(b => b.classList.remove("active"));
     mainVtuber.classList.add("active");
 
-    filterMultiple([
-      "my-miku-credits",
-      "my-miku-teasers"
-    ]);
-  });
+filterMultiple([
+  "my-miku-credits",
+  "my-miku-teasers",
+  "miku-self-introductions"
+]);
 
   // MAIN CATEGORY: My Miku Comparisons
   mainComparisons.addEventListener("click", () => {
