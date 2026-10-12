@@ -372,9 +372,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function filterCategory(category) {
     videos.forEach(video => {
       const card = video.closest(".video-card");
-      const videoCat = video.dataset.category;
+      const videoCats = video.dataset.category.split(" ");
 
-      if (category === "all" || videoCat === category) {
+      if (category === "all" || videoCats.includes(category)) {
         card.style.display = "flex";
       } else {
         card.style.display = "none";
@@ -386,9 +386,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function filterMultiple(categories) {
     videos.forEach(video => {
       const card = video.closest(".video-card");
-      const videoCat = video.dataset.category;
+      const videoCats = video.dataset.category.split(" ");
 
-      if (categories.includes(videoCat)) {
+      if (videoCats.some(cat => categories.includes(cat))) {
         card.style.display = "flex";
       } else {
         card.style.display = "none";
@@ -411,40 +411,42 @@ document.addEventListener("DOMContentLoaded", () => {
     ]);
   });
 
-// MAIN CATEGORY: Vtuber Miku
-mainVtuber.addEventListener("click", () => {
-  vtuberSubs.classList.toggle("hidden");
-  albumSubs.classList.add("hidden");
+  // MAIN CATEGORY: Vtuber Miku
+  mainVtuber.addEventListener("click", () => {
+    vtuberSubs.classList.toggle("hidden");
+    albumSubs.classList.add("hidden");
 
-  categoryButtons.forEach(b => b.classList.remove("active"));
-  mainVtuber.classList.add("active");
+    categoryButtons.forEach(b => b.classList.remove("active"));
+    mainVtuber.classList.add("active");
 
-  filterMultiple([
-    "my-miku-credits",
-    "my-miku-teasers",
-    "miku-self-introductions"
-  ]);
-});   // 
+    filterMultiple([
+      "my-miku-credits",
+      "my-miku-teasers",
+      "miku-self-introductions"
+    ]);
+  });
 
+  // MAIN CATEGORY: My Miku Comparisons
+  mainComparisons.addEventListener("click", () => {
+    albumSubs.classList.add("hidden");
+    vtuberSubs.classList.add("hidden");
 
-// MAIN CATEGORY: My Miku Comparisons
-mainComparisons.addEventListener("click", () => {
-  albumSubs.classList.add("hidden");
-  vtuberSubs.classList.add("hidden");
+    categoryButtons.forEach(b => b.classList.remove("active"));
+    mainComparisons.classList.add("active");
 
-  categoryButtons.forEach(b => b.classList.remove("active"));
-  mainComparisons.classList.add("active");
-
-  filterCategory("my-miku-comparisons");
-});
+    filterCategory("my-miku-comparisons");
+  });
 
   // NORMAL FILTERING (subcategories + All)
   categoryButtons.forEach(btn => {
+
     if (
       btn === mainAlbum ||
       btn === mainVtuber ||
       btn === mainComparisons
-    ) return;
+    ) {
+      return;
+    }
 
     btn.addEventListener("click", () => {
       categoryButtons.forEach(b => b.classList.remove("active"));
@@ -453,13 +455,11 @@ mainComparisons.addEventListener("click", () => {
       const category = btn.dataset.category;
       filterCategory(category);
     });
+
   });
 
 });
 </script>
-
-</body>
-</html>
 
 </body>
 </html>
