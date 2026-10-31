@@ -1,4 +1,4 @@
-// MIKUWEEN - October 31 only
+// mikuween.js
 
 (function () {
 
