@@ -32,46 +32,6 @@ const birthdayScript = document.createElement('script');
 birthdayScript.src = '/scripts/miku-birthday.js';
 document.body.appendChild(birthdayScript);
 
-// MIKUWEEN 2026 - October 31 only
-
-(function () {
-    const today = new Date();
-
-    if (today.getMonth() === 9 && today.getDate() === 31) {
-        document.body.classList.add("mikuween-active");
-
-        // Floating greeting
-        const banner = document.createElement("div");
-        banner.className = "mikuween-banner";
-
-        banner.innerHTML = `
-            🩵🎃《≧◡≦》 Happy Mikuween! 《≧◡≦》🎃🩵
-            <span>Music, magic and smiles under the Halloween moon ♪</span>
-        `;
-
-        document.body.prepend(banner);
-
-        // Miku pumpkins
-        const leftPumpkin = document.createElement("div");
-        leftPumpkin.className = "miku-pumpkin left";
-
-        const rightPumpkin = document.createElement("div");
-        rightPumpkin.className = "miku-pumpkin right";
-
-        document.body.appendChild(leftPumpkin);
-        document.body.appendChild(rightPumpkin);
-
-        // Floating notes
-        for (let i = 0; i < 18; i++) {
-            const note = document.createElement("div");
-            note.className = "floating-note";
-            note.textContent = ["♪", "♫", "♬", "🎵"][Math.floor(Math.random() * 4)];
-
-            note.style.left = Math.random() * 100 + "vw";
-            note.style.animationDuration = (12 + Math.random() * 12) + "s";
-            note.style.animationDelay = Math.random() * 5 + "s";
-
-            document.body.appendChild(note);
-        }
-    }
-})();
+const mikuweenScript = document.createElement('script');
+mikuweenScript.src = '/scripts/mikuween.js';
+document.body.appendChild(mikuweenScript);
