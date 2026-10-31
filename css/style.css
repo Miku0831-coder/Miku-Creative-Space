@@ -1129,3 +1129,104 @@ body.mikuween-active h2 {
 
     color: white;
 }
+
+/* ==========================
+   MIKU MOONLIGHT THEME
+   Every Night
+========================== */
+
+body.miku-night {
+    --miku-teal: #39c5bb;
+    --pumpkin: #ff9330;
+    --moon-purple: #7040c7;
+    --candy-pink: #ffb8da;
+    --night: #13111f;
+
+    background:
+        radial-gradient(circle at 20% 15%, rgba(255,147,48,.15), transparent 25%),
+        radial-gradient(circle at 85% 20%, rgba(57,197,187,.15), transparent 25%),
+        linear-gradient(180deg, #211331 0%, #13111f 100%);
+
+    color: #ffffff;
+}
+
+/* Links */
+
+body.miku-night a {
+    color: var(--candy-pink);
+}
+
+body.miku-night a:hover {
+    color: var(--miku-teal);
+}
+
+/* Cards */
+
+body.miku-night .card,
+body.miku-night .section,
+body.miku-night .content-box {
+    background: rgba(255,255,255,.03);
+
+    border: 1px solid rgba(255,147,48,.2);
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 0 15px rgba(112,64,199,.3),
+        0 0 25px rgba(57,197,187,.1);
+}
+
+/* Headings */
+
+body.miku-night h1,
+body.miku-night h2 {
+
+    color: #ffdcb3;
+
+    text-shadow:
+        0 0 8px rgba(255,147,48,.8),
+        0 0 20px rgba(57,197,187,.4);
+}
+
+/* Floating Notes */
+
+.floating-note {
+    position: fixed;
+
+    bottom: -50px;
+
+    color: rgba(255,255,255,.45);
+
+    font-size: 1.8rem;
+
+    pointer-events: none;
+
+    animation: mikuNightFloat linear infinite;
+}
+
+@keyframes mikuNightFloat {
+
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
