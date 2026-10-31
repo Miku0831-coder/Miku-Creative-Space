@@ -43,22 +43,35 @@ document.body.appendChild(birthdayScript);
         // Floating greeting
         const banner = document.createElement("div");
         banner.className = "mikuween-banner";
-       banner.innerHTML = `
-    🩵🎃《≧◡≦》 Happy Mikuween! 《≧◡≦》🎃🩵
-    <span>Music, magic and smiles under the Halloween moon ♪</span>
-`;
 
-// Miku pumpkins
-const leftPumpkin = document.createElement("div");
-leftPumpkin.className = "miku-pumpkin left";
+        banner.innerHTML = `
+            🩵🎃《≧◡≦》 Happy Mikuween! 《≧◡≦》🎃🩵
+            <span>Music, magic and smiles under the Halloween moon ♪</span>
+        `;
 
-const rightPumpkin = document.createElement("div");
-rightPumpkin.className = "miku-pumpkin right";
+        document.body.prepend(banner);
 
-document.body.appendChild(leftPumpkin);
-document.body.appendChild(rightPumpkin);
+        // Miku pumpkins
+        const leftPumpkin = document.createElement("div");
+        leftPumpkin.className = "miku-pumpkin left";
 
-// Floating notes
-for (let i = 0; i < 18; i++) {
-   ...
-}
+        const rightPumpkin = document.createElement("div");
+        rightPumpkin.className = "miku-pumpkin right";
+
+        document.body.appendChild(leftPumpkin);
+        document.body.appendChild(rightPumpkin);
+
+        // Floating notes
+        for (let i = 0; i < 18; i++) {
+            const note = document.createElement("div");
+            note.className = "floating-note";
+            note.textContent = ["♪", "♫", "♬", "🎵"][Math.floor(Math.random() * 4)];
+
+            note.style.left = Math.random() * 100 + "vw";
+            note.style.animationDuration = (12 + Math.random() * 12) + "s";
+            note.style.animationDelay = Math.random() * 5 + "s";
+
+            document.body.appendChild(note);
+        }
+    }
+})();
