@@ -62,3 +62,8 @@ document.body.appendChild(mikuweenScript);
 const nightModeScript = document.createElement("script");
 nightModeScript.src = "/scripts/night-mode.js";
 document.body.appendChild(nightModeScript);
+
+const floatingNotesScript = document.createElement("script");
+floatingNotesScript.src = "/scripts/floating-notes.js";
+document.body.appendChild(floatingNotesScript);
+
