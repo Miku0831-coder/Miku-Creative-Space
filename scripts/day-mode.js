@@ -1,22 +1,40 @@
-        // Floating notes
-        for (let i = 0; i < 18; i++) {
+// day-mode.js
 
-            const note = document.createElement("div");
-            note.className = "floating-note";
+(function () {
 
-            note.textContent =
-                ["♪", "♫", "♬", "🎵"]
-                [Math.floor(Math.random() * 4)];
+    const TEST_MODE = false;
 
-            note.style.left = Math.random() * 100 + "vw";
-            note.style.animationDuration =
-                (12 + Math.random() * 12) + "s";
+    const hour = new Date().getHours();
 
-            note.style.animationDelay =
-                Math.random() * 5 + "s";
+    const isDay =
+        TEST_MODE ||
+        (hour >= 7 && hour < 19);
 
-            document.body.appendChild(note);
-        }
+    if (!isDay) {
+        return;
+    }
+
+    // Floating symbols
+    for (let i = 0; i < 18; i++) {
+
+        const note = document.createElement("div");
+
+        note.className = "floating-note";
+
+        note.textContent =
+            ["♪", "♫", "♬", "🎵", "☀️", "🌼"]
+            [Math.floor(Math.random() * 6)];
+
+        note.style.left =
+            Math.random() * 100 + "vw";
+
+        note.style.animationDuration =
+            (12 + Math.random() * 12) + "s";
+
+        note.style.animationDelay =
+            Math.random() * 5 + "s";
+
+        document.body.appendChild(note);
     }
 
 })();
