@@ -947,3 +947,154 @@ body.miku-birthday {
   text-align: center;
   margin-top: 12px;
 }
+
+/* ==========================
+   MIKUWEEN THEME
+   October 31 Only
+========================== */
+
+body.mikuween-active {
+    --miku-teal: #39c5bb;
+    --pumpkin: #ff9330;
+    --moon-purple: #7040c7;
+    --candy-pink: #ffb8da;
+    --night: #13111f;
+
+    background:
+        radial-gradient(circle at 20% 15%, rgba(255,147,48,.15), transparent 25%),
+        radial-gradient(circle at 85% 20%, rgba(57,197,187,.15), transparent 25%),
+        linear-gradient(180deg,#211331 0%, #13111f 100%);
+
+    color: #ffffff;
+}
+
+/* Greeting Banner */
+
+.mikuween-banner {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    text-align: center;
+    padding: 14px;
+    font-size: 1.15rem;
+
+    background: linear-gradient(
+        90deg,
+        #ff9330,
+        #7040c7,
+        #39c5bb
+    );
+
+    color: white;
+    font-weight: 700;
+
+    box-shadow:
+        0 0 25px rgba(255,147,48,.4),
+        0 0 50px rgba(57,197,187,.3);
+}
+
+.mikuween-banner span {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-top: 4px;
+}
+
+/* Links */
+
+body.mikuween-active a {
+    color: var(--candy-pink);
+}
+
+body.mikuween-active a:hover {
+    color: var(--miku-teal);
+}
+
+/* Card Decorations */
+
+body.mikuween-active .card,
+body.mikuween-active .section,
+body.mikuween-active .content-box {
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,147,48,.2);
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 0 15px rgba(112,64,199,.3),
+        0 0 25px rgba(57,197,187,.1);
+}
+
+/* Floating Notes */
+
+.floating-note {
+    position: fixed;
+    bottom: -50px;
+
+    color: rgba(255,255,255,.45);
+
+    font-size: 1.8rem;
+
+    pointer-events: none;
+
+    animation: mikuweenFloat linear infinite;
+}
+
+@keyframes mikuweenFloat {
+    from {
+        transform:
+            translateY(0)
+            rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    to {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+/* Special Heading Glow */
+
+body.mikuween-active h1,
+body.mikuween-active h2 {
+    color: #ffdcb3;
+
+    text-shadow:
+        0 0 8px rgba(255,147,48,.8),
+        0 0 20px rgba(57,197,187,.4);
+}
+
+/* Pumpkin Corners */
+
+body.mikuween-active::before,
+body.mikuween-active::after {
+    position: fixed;
+    font-size: 3rem;
+    z-index: 2;
+    pointer-events: none;
+}
+
+body.mikuween-active::before {
+    content: "🎃";
+    top: 15px;
+    left: 15px;
+}
+
+body.mikuween-active::after {
+    content: "🎵";
+    top: 15px;
+    right: 15px;
+}
