@@ -40,9 +40,9 @@ document.body.appendChild(mikuweenScript);
 
     const hour = new Date().getHours();
 
-    // Night time: 19:00 - 07:00
+    // 7 PM to 7 AM
     if (hour >= 19 || hour < 7) {
-        document.body.classList.add("night-theme");
+        document.body.classList.add("miku-night");
     }
 
 })();
