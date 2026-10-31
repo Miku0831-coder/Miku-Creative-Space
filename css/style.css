@@ -1077,24 +1077,55 @@ body.mikuween-active h2 {
         0 0 20px rgba(57,197,187,.4);
 }
 
-/* Pumpkin Corners */
+/* Miku Pumpkins */
 
-body.mikuween-active::before,
-body.mikuween-active::after {
+.miku-pumpkin {
     position: fixed;
-    font-size: 3rem;
-    z-index: 2;
+    width: 90px;
+    height: 90px;
+    z-index: 999;
     pointer-events: none;
 }
 
-body.mikuween-active::before {
-    content: "🎃";
+.miku-pumpkin.left {
     top: 15px;
     left: 15px;
 }
 
-body.mikuween-active::after {
-    content: "🎵";
+.miku-pumpkin.right {
     top: 15px;
     right: 15px;
+}
+
+.miku-pumpkin::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle at 50% 35%, #39c5bb 0%, #2fa59d 70%);
+
+    box-shadow:
+        0 0 15px rgba(57,197,187,.6),
+        0 0 30px rgba(57,197,187,.3);
+}
+
+.miku-pumpkin::after {
+    content: "◕ ◕\A ▿";
+    white-space: pre;
+
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.2;
+
+    color: white;
 }
