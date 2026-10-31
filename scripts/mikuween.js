@@ -32,8 +32,8 @@
         banner.className = "mikuween-banner";
 
         banner.innerHTML = `
-            🩵🎃《≧◡≦》 Happy Mikuween! 《≧◡≦》🎃🩵
-            <span>Music, magic and smiles under the Halloween moon ♪</span>
+            🩵🎃《≧◡≦》 HAPPY MIKUWEEN! 《≧◡≦》🎃🩵
+            <span>Music, magic and smiles under the MIKUWEEN moon ♪</span>
         `;
 
         document.body.prepend(banner);
