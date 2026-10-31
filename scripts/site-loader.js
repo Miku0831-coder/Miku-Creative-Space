@@ -49,17 +49,17 @@ document.body.appendChild(birthdayScript);
         `;
         document.body.prepend(banner);
 
-        // Decorative notes
-        for (let i = 0; i < 18; i++) {
-            const note = document.createElement("div");
-            note.className = "floating-note";
-            note.textContent = ["♪", "♫", "♬", "🎵"][Math.floor(Math.random() * 4)];
+// Miku pumpkins
+const leftPumpkin = document.createElement("div");
+leftPumpkin.className = "miku-pumpkin left";
 
-            note.style.left = Math.random() * 100 + "vw";
-            note.style.animationDuration = (12 + Math.random() * 12) + "s";
-            note.style.animationDelay = Math.random() * 5 + "s";
+const rightPumpkin = document.createElement("div");
+rightPumpkin.className = "miku-pumpkin right";
 
-            document.body.appendChild(note);
-        }
-    }
-})();
+document.body.appendChild(leftPumpkin);
+document.body.appendChild(rightPumpkin);
+
+// Floating notes
+for (let i = 0; i < 18; i++) {
+   ...
+}
