@@ -22,7 +22,7 @@
         note.className = "floating-note";
 
         note.textContent =
-            ["♪", "♫", "♬", "🎵", "🌼", "☀️"]
+            ["♪", "♫", "♬", "🎵"]
             [Math.floor(Math.random() * 6)];
 
         note.style.left =
