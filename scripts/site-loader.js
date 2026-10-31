@@ -35,14 +35,3 @@ document.body.appendChild(birthdayScript);
 const mikuweenScript = document.createElement('script');
 mikuweenScript.src = '/scripts/mikuween.js';
 document.body.appendChild(mikuweenScript);
-
-(function () {
-
-    const hour = new Date().getHours();
-
-    // 7 PM to 7 AM
-    if (hour >= 19 || hour < 7) {
-        document.body.classList.add("miku-night");
-    }
-
-})();
