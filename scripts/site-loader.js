@@ -36,11 +36,10 @@ const mikuweenScript = document.createElement('script');
 mikuweenScript.src = '/scripts/mikuween.js';
 document.body.appendChild(mikuweenScript);
 
+const dayModeScript = document.createElement('script');
+dayModeScript.src = '/scripts/day-mode.js';
+document.body.appendChild(dayModeScript);
+
 const nightModeScript = document.createElement('script');
 nightModeScript.src = '/scripts/night-mode.js';
 document.body.appendChild(nightModeScript);
-
-const floatingNotesScript = document.createElement('script');
-floatingNotesScript.src = '/scripts/floating-notes.js';
-document.body.appendChild(floatingNotesScript);
-
