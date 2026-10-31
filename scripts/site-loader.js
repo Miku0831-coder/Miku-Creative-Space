@@ -35,3 +35,14 @@ document.body.appendChild(birthdayScript);
 const mikuweenScript = document.createElement('script');
 mikuweenScript.src = '/scripts/mikuween.js';
 document.body.appendChild(mikuweenScript);
+
+(function () {
+
+    const hour = new Date().getHours();
+
+    // Night time: 19:00 - 07:00
+    if (hour >= 19 || hour < 7) {
+        document.body.classList.add("night-theme");
+    }
+
+})();
