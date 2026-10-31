@@ -35,3 +35,7 @@ document.body.appendChild(birthdayScript);
 const mikuweenScript = document.createElement('script');
 mikuweenScript.src = '/scripts/mikuween.js';
 document.body.appendChild(mikuweenScript);
+
+const nightModeScript = document.createElement("script");
+nightModeScript.src = "/scripts/night-mode.js";
+document.body.appendChild(nightModeScript);
