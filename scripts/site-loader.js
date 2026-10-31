@@ -43,11 +43,10 @@ document.body.appendChild(birthdayScript);
         // Floating greeting
         const banner = document.createElement("div");
         banner.className = "mikuween-banner";
-        banner.innerHTML = `
-            🎃 HAPPY MIKUWEEN! 🎃
-            <span>Music, magic and smiles under the MIKUWEEN moon ♪</span>
-        `;
-        document.body.prepend(banner);
+       banner.innerHTML = `
+    🩵🎃《≧◡≦》 Happy Mikuween! 《≧◡≦》🎃🩵
+    <span>Music, magic and smiles under the Halloween moon ♪</span>
+`;
 
 // Miku pumpkins
 const leftPumpkin = document.createElement("div");
