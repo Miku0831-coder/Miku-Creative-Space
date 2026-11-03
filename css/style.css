@@ -720,17 +720,6 @@ body.miku-birthday {
   color: #007a8a;
 }
 
-.anniversary-layout {
-  display: flex;
-  align-items: flex-start;
-  gap: 40px;
-  margin-top: 40px;
-}
-
-.anniversary-text {
-  flex: 1;
-}
-
 .voicebank-list {
   width: 260px;
   background: #e8f9fb;
