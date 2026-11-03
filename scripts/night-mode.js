@@ -2,7 +2,7 @@
 
 
     // Set to true to test during daytime
-    const TEST_MODE = true;
+    const TEST_MODE = false;
 
 
     const hour = new Date().getHours();
