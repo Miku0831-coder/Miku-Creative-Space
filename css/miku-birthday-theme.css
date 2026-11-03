@@ -1,0 +1,10 @@
+.anniversary-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.anniversary-text {
+  flex: 1;
+}
