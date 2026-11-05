@@ -1,7 +1,5 @@
 // day-mode.js
 
-console.log("Day mode loaded");
-
 (function () {
 
     const TEST_MODE = false;
