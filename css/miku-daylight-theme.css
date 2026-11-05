@@ -2,16 +2,14 @@
 .floating-note {
     position: fixed;
     bottom: -50px;
-    z-index: 1;
 
     font-size: 1.8rem;
-    color: rgba(255, 192, 203, 0.35); /* soft pink */
+    color: rgba(255, 192, 203, 0.35);
+
     pointer-events: none;
     user-select: none;
 
-    animation-name: floatNote;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation: floatNote 18s linear infinite;
 }
 
 /* Floating animation */
