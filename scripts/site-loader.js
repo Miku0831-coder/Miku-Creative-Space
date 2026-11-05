@@ -36,10 +36,14 @@ const mikuweenScript = document.createElement('script');
 mikuweenScript.src = '/scripts/mikuween.js';
 document.body.appendChild(mikuweenScript);
 
-const dayModeScript = document.createElement('script');
-dayModeScript.src = '/scripts/day-mode.js';
-document.body.appendChild(dayModeScript);
+const mikuDayModeScript = document.createElement('script');
+mikuDayModeScript.src = '/scripts/miku-day-mode.js';
+document.body.appendChild(mikuDayModeScript);
 
-const nightModeScript = document.createElement('script');
-nightModeScript.src = '/scripts/night-mode.js';
-document.body.appendChild(nightModeScript);
+const mikuNightModeScript = document.createElement('script');
+mikuNightModeScript.src = '/scripts/miku-night-mode.js';
+document.body.appendChild(mikuNightModeScript);
+
+const mikuChristmasScript = document.createElement('script');
+mikuChristmasScript.src = '/scripts/miku-christmas.js';
+document.body.appendChild(mikuChristmasScript);
