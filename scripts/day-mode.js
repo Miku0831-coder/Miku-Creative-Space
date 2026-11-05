@@ -22,9 +22,9 @@ console.log("Day mode loaded");
         const note = document.createElement("div");
 
         note.className = "floating-note";
-
-       const symbols = ["♪", "♫", "♬", "🎵"];
+        
        note.textContent =
+       const symbols = ["♪", "♫", "♬", "🎵"];
        symbols[Math.floor(Math.random() * symbols.length)];
 
         note.style.left =
