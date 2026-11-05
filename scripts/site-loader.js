@@ -47,3 +47,7 @@ document.body.appendChild(mikuNightModeScript);
 const mikuChristmasScript = document.createElement('script');
 mikuChristmasScript.src = '/scripts/miku-christmas.js';
 document.body.appendChild(mikuChristmasScript);
+
+const mikuWinterScript = document.createElement('script');
+mikuWinterScript.src = '/scripts/miku-winter.js';
+document.body.appendChild(mikuWinterScript);
