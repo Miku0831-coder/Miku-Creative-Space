@@ -935,3 +935,65 @@ body.miku-birthday {
   text-align: center;
   margin-top: 12px;
 }
+
+/* Snowflakes */
+
+.christmas-snowflake {
+    position: fixed;
+    top: -50px;
+    z-index: 2;
+    pointer-events: none;
+    user-select: none;
+
+    font-size: 1.4rem;
+
+    animation-name: christmasSnow;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* Falling from upper-left toward lower-right */
+
+@keyframes christmasSnow {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(250px, 110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Santa Miku hat on menu */
+
+.menu-santa-hat {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -55px;
+    font-size: 3rem;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Christmas greeting */
+
+.christmas-message {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+    color: #c93f3f;
+    font-size: 1.3rem;
+    font-weight: 600;
+
+    text-shadow:
+        0 0 5px rgba(255,255,255,0.8),
+        0 0 12px rgba(255,255,255,0.5);
+}
