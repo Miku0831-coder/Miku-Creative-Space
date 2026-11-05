@@ -1,11 +1,21 @@
-(function () {
+const TEST_MODE = false;
 
-    const TEST_MODE = true;
+const now = new Date();
+const month = now.getMonth();
+const day = now.getDate();
+const hour = now.getHours();
 
-    const month = new Date().getMonth();
+const isChristmas =
+    TEST_MODE ||
+    (
+        (month === 11 && day === 24 && hour >= 18) ||
+        (month === 11 && day === 25) ||
+        (month === 11 && day === 26)
+    );
 
-    const isChristmas =
-        TEST_MODE || month === 11; // December
+if (!isChristmas) {
+    return;
+}
 
     if (!isChristmas) {
         return;
