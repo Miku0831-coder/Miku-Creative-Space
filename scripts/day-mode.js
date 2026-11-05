@@ -23,7 +23,7 @@
 
         note.textContent =
             ["♪", "♫", "♬", "🎵"]
-            [Math.floor(Math.random() * 6)];
+            [Math.floor(Math.random() * 4)];
 
         note.style.left =
             Math.random() * 100 + "vw";
