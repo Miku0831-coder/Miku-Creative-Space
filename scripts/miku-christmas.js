@@ -55,7 +55,7 @@
         document.body.appendChild(snow);
     }
 
-    // Santa hat
+    // Santa Miku hat
 
     const menu = document.querySelector("nav");
 
