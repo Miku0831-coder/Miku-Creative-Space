@@ -3,15 +3,17 @@ const TEST_MODE = false;
 const now = new Date();
 const month = now.getMonth();
 const day = now.getDate();
-const hour = now.getHours();
 
 const isChristmas =
     TEST_MODE ||
     (
-        (month === 11 && day === 24 && hour >= 18) ||
-        (month === 11 && day === 25) ||
-        (month === 11 && day === 26)
+        (month === 11 && day >= 1) ||   // December 1-31
+        (month === 0 && day <= 7)       // January 1-7
     );
+
+if (!isChristmas) {
+    return;
+}
 
 if (!isChristmas) {
     return;
