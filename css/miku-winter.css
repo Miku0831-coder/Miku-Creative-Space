@@ -43,19 +43,3 @@
     pointer-events: none;
     z-index: 5;
 }
-
-/* Christmas greeting */
-
-.christmas-message {
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 15px;
-
-    color: #c93f3f;
-    font-size: 1.3rem;
-    font-weight: 600;
-
-    text-shadow:
-        0 0 5px rgba(255,255,255,0.8),
-        0 0 12px rgba(255,255,255,0.5);
-}
