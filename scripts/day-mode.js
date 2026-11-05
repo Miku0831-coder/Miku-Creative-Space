@@ -21,9 +21,9 @@
 
         note.className = "floating-note";
 
-        note.textContent =
-            const symbols = ["♪", "♫", "♬", "🎵"];
-            note.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+       const symbols = ["♪", "♫", "♬", "🎵"];
+       note.textContent =
+       symbols[Math.floor(Math.random() * symbols.length)];
 
         note.style.left =
             Math.random() * 100 + "vw";
