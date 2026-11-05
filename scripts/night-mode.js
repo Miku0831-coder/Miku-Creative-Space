@@ -1,6 +1,5 @@
 (function () {
 
-
     // Set to true to test during daytime
     const TEST_MODE = false;
 
